@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Enlightenism Organization | Services</title>
+  <meta name="description" content="Taylor Immigration, Real Estate, and Land Development Services designed to help families relocate safely into trusted homes and off-grid communities." />
+  <meta name="theme-color" content="#05070d" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+
+  <!-- If you move styles into css/style.css later, keep these tokens consistent -->
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.9rem);
+
+      --space-1:  0.25rem;
+      --space-2:  0.5rem;
+      --space-3:  0.75rem;
+      --space-4:  1rem;
+      --space-5:  1.25rem;
+      --space-6:  1.5rem;
+      --space-8:  2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      --font-display: 'Zodiak', Georgia, serif;
+      --font-body: 'Satoshi', Inter, sans-serif;
+
+      --color-bg: #05070d;
+      --color-surface: rgba(12, 17, 28, 0.78);
+      --color-surface-2: rgba(17, 24, 39, 0.9);
+      --color-border: rgba(255, 255, 255, 0.14);
+      --color-divider: rgba(255, 255, 255, 0.09);
+      --color-text: #ffffff;
+      --color-text-muted: rgba(255, 255, 255, 0.8);
+      --color-text-faint: rgba(255, 255, 255, 0.55);
+
+      --color-gold-1: #f5d87a;
+      --color-gold-2: #d4af37;
+      --color-gold-3: #8f6a11;
+      --color-plat-1: #ffffff;
+      --color-plat-2: #e5e4e2;
+      --color-sky-1: #b9f0ff;
+      --color-sky-2: #87ceeb;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
+      --shadow-md: 0 18px 38px rgba(0, 0, 0, 0.28);
+      --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.42);
+
+      --radius-sm: 0.375rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1.2rem;
+      --radius-xl: 1.8rem;
+      --radius-full: 999px;
+
+      --content-default: 1200px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #05070d;
+      --color-surface: rgba(12, 17, 28, 0.78);
+      --color-surface-2: rgba(17, 24, 39, 0.9);
+      --color-text: #ffffff;
+      --color-text-muted: rgba(255, 255, 255, 0.8);
+      --color-text-faint: rgba(255, 255, 255, 0.55);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      text-size-adjust: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: var(--color-bg);
+    }
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      overflow-x: clip;
+      background: var(--color-bg);
+      cursor: none;
+    }
+    img, picture, video, canvas, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; color: inherit; }
+    button { cursor: pointer; background: none; border: none; }
+    ::selection { background: rgba(212, 175, 55, 0.34); color: #fff; }
+    :focus-visible {
+      outline: 2px solid var(--color-gold-2);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    .cursor,
+    .cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 120;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: 0;
+      transition: opacity 220ms ease;
+    }
+    .cursor {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-gold-1), var(--color-sky-1));
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.8);
+    }
+    .cursor-ring {
+      width: 48px;
+      height: 48px;
+      margin-left: -24px;
+      margin-top: -24px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12), rgba(135, 206, 235, 0.03));
+      backdrop-filter: blur(8px);
+    }
+    body.cursor-enabled .cursor,
+    body.cursor-enabled .cursor-ring { opacity: 1; }
+    body.cursor-hover .cursor-ring {
+      width: 82px;
+      height: 82px;
+      margin-left: -41px;
+      margin-top: -41px;
+      border-color: rgba(212, 175, 55, 0.5);
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.18), rgba(229, 228, 226, 0.04));
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--content-default));
+      margin-inline: auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(180deg, rgba(5, 7, 13, 0.9), rgba(5, 7, 13, 0.5));
+      border-bottom: 1px solid transparent;
+      transition: background 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+    }
+    .header.scrolled {
+      border-color: rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav {
+      min-height: 5.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-height: 44px;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(135,206,235,0.08));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 20px rgba(0,0,0,0.22);
+    }
+    .brand-mark svg { width: 22px; height: 22px; color: var(--color-text); }
+    .brand-title {
+      font-size: var(--text-sm);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background: linear-gradient(110deg, var(--color-gold-1), var(--color-gold-2), var(--color-plat-2));
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: metallic-title-shift 10s linear infinite;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .nav-links a,
+    .theme-toggle,
+    .menu-toggle {
+      min-height: 44px;
+      padding: 0.7rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      border: 1px solid transparent;
+      transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive), transform var(--transition-interactive);
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .theme-toggle:hover {
+      color: var(--color-text);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      padding: 0;
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      padding: 0;
+    }
+
+    .video-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .video-background-wrapper {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .video-background-wrapper video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+    .video-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(5,10,20,0.86), rgba(5,10,20,0.96)),
+        radial-gradient(circle at 20% 0%, rgba(135,206,235,0.18), transparent 40%),
+        radial-gradient(circle at 80% 100%, rgba(212,175,55,0.2), transparent 40%);
+    }
+
+    .services-shell {
+      position: relative;
+      padding-block: clamp(var(--space-16), 9vw, var(--space-24));
+    }
+
+    .section-head {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: clamp(var(--space-8), 3vw, var(--space-12));
+      max-width: 60rem;
+    }
+    .section-kicker {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .section-head h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 1.05;
+      text-wrap: balance;
+    }
+    .section-head p {
+      color: var(--color-text-muted);
+      max-width: 58ch;
+    }
+
+    .services-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .service-card {
+      position: relative;
+      padding: 1.6rem 1.5rem 1.7rem;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      transition: transform var(--transition-interactive), box-shadow var(--transition-interactive), border-color var(--transition-interactive);
+    }
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0% 0%, rgba(135,206,235,0.18), transparent 45%),
+                  radial-gradient(circle at 100% 100%, rgba(212,175,55,0.18), transparent 45%);
+      pointer-events: none;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(255,255,255,0.22);
+    }
+    .service-icon {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: var(--space-3);
+      background: linear-gradient(135deg, rgba(212,175,55,0.25), rgba(135,206,235,0.16));
+      border: 1px solid rgba(255,255,255,0.22);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+    }
+    .service-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--color-text);
+    }
+    .service-title {
+      position: relative;
+      font-size: var(--text-lg);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    .service-tagline {
+      position: relative;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: 0.8rem;
+    }
+    .service-body {
+      position: relative;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-4);
+    }
+    .service-cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.1rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.05);
+      color: var(--color-text);
+      transition: background var(--transition-interactive), border-color var(--transition-interactive), transform var(--transition-interactive);
+    }
+    .service-cta:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.26);
+      transform: translateY(-1px);
+    }
+
+    .footer {
+      padding-block: 2rem 2.4rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+    .footer-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.9rem;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .footer-links a:hover { color: var(--color-text); }
+    .footer-branding {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: transparent;
+      background: linear-gradient(110deg, var(--color-gold-1), var(--color-plat-2), var(--color-gold-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .interactive { cursor: none; }
+
+    @keyframes metallic-title-shift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      body { cursor: auto; }
+      .cursor, .cursor-ring { display: none; }
+    }
+
+    @media (max-width: 1080px) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      body { cursor: auto; }
+      .cursor, .cursor-ring { display: none; }
+
+      .menu-toggle { display: inline-flex; }
+      .theme-toggle { display: none; }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 0.6rem);
+        right: 1rem;
+        left: 1rem;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.8rem;
+        border-radius: 1.2rem;
+        background: rgba(8, 12, 20, 0.94);
+        border: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { width: 100%; justify-content: center; }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-branding {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <div class="video-background-wrapper" aria-hidden="true">
+    <!-- Replace src with ./assets/videos/services-bg.mp4 when you add the file -->
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="./assets/videos/services-bg.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="video-overlay" aria-hidden="true"></div>
+
+  <header class="header" id="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html" aria-label="The Enlightenism Organization home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="24" cy="24" r="16"></circle>
+            <path d="M24 8v32"></path>
+            <path d="M12 24h24"></path>
+            <path d="M15 15l18 18"></path>
+          </svg>
+        </span>
+        <span class="brand-title">The Enlightenism Organization</span>
+      </a>
+
+      <button class="menu-toggle interactive" type="button" aria-expanded="false" aria-controls="nav-links" data-menu-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a class="interactive" href="./index.html">Home</a>
+        <a class="interactive" href="./services.html">Services</a>
+        <a class="interactive" href="./programs.html">Program Development</a>
+        <a class="interactive" href="./support.html">Help &amp; Support</a>
+        <button class="theme-toggle interactive" type="button" data-theme-toggle aria-label="Switch theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="services-shell">
+    <section class="container" aria-labelledby="services-heading">
+      <div class="section-head">
+        <span class="section-kicker">Services</span>
+        <h1 id="services-heading">Trusted pathways for relocation, housing, and land development.</h1>
+        <p>
+          Taylor services exist to help people and families leave unstable situations and arrive in safe, trusted environments, with guidance at every step.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Taylor Immigration Services -->
+        <article class="service-card interactive">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-6 9 6-9 6-9-6z" />
+              <path d="M3 15l9 6 9-6" />
+              <path d="M9 12l3 2 3-2" />
+            </svg>
+          </div>
+          <h2 class="service-title">Taylor Immigration Services</h2>
+          <p class="service-tagline">Guided residency and citizenship pathways by professional immigration agents.</p>
+          <p class="service-body">
+            Taylor Immigration Services helps people file temporary and permanent residency applications, and follow fast-track policies for citizenship in Jalisco, Mexico, with each step verified and explained.
+            Every case is treated like a real relocation story, not just a stack of documents, so families understand timelines and what to expect before, during, and after the move.
+          </p>
+          <button class="service-cta" type="button">
+            <span>Request immigration guidance</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="M13 5l7 7-7 7" />
+            </svg>
+          </button>
+        </article>
+
+        <!-- Taylor Real Estate Services -->
+        <article class="service-card interactive">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 11.5L12 4l9 7.5" />
+              <path d="M5 21V11.5" />
+              <path d="M19 21V11.5" />
+              <path d="M9 21v-5h6v5" />
+            </svg>
+          </div>
+          <h2 class="service-title">Taylor Real Estate Services</h2>
+          <p class="service-tagline">Trusted rentals and home purchases, protecting families from scams.</p>
+          <p class="service-body">
+            Taylor Real Estate Services focuses on helping people rent or buy homes with full protection from fake listings, forged contracts, and hidden legal problems.
+            Every rental and sale is checked for ownership, legal status, and local reputation before any deal is made, so families know who they are dealing with and what they are signing.
+          </p>
+          <button class="service-cta" type="button">
+            <span>Find a verified home</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="M13 5l7 7-7 7" />
+            </svg>
+          </button>
+        </article>
+
+        <!-- Taylor Land Development Services -->
+        <article class="service-card interactive">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 18h18" />
+              <path d="M5 18V9l4-2 4 2v9" />
+              <path d="M15 18v-5l4-2 2 1" />
+              <path d="M3 14l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1" />
+            </svg>
+          </div>
+          <h2 class="service-title">Taylor Land Development Services</h2>
+          <p class="service-tagline">Off-grid land and farming developments designed for a better more natural life.</p>
+          <p class="service-body">
+            Taylor Land Development helps people buy vacant land and turn it into off-grid, farm-oriented communities using advanced technologies and practical build plans.
+            The focus is on creating places where families can actually live, grow food, generate power, and build long-term resilience, instead of just owning raw land with no support.
+          </p>
+          <button class="service-cta" type="button">
+            <span>Plan an off-grid build</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="M13 5l7 7-7 7" />
+            </svg>
+          </button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <span class="brand-title">The Enlightenism Organization</span>
+        <div class="footer-links">
+          <a class="interactive" href="./privacy.html">Privacy Policy</a>
+          <a class="interactive" href="./terms.html">Terms of Use</a>
+          <a class="interactive" href="./services.html">Services</a>
+          <a class="interactive" href="./programs.html">Program Development</a>
+          <a class="interactive" href="./support.html">Help &amp; Support</a>
+        </div>
+      </div>
+      <div class="footer-branding">
+        <span>The Enlightenism Organization TM © 2026</span>
+        <span>Powered By Universal Rejuvenation Inc.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themeButton = document.querySelector('[data-theme-toggle]');
+      const menuButton = document.querySelector('[data-menu-toggle]');
+      const navLinks = document.getElementById('nav-links');
+      const header = document.getElementById('site-header');
+      const cursor = document.querySelector('.cursor');
+      const ring = document.querySelector('.cursor-ring');
+      const interactiveItems = document.querySelectorAll('.interactive');
+      const mediaDark = window.matchMedia('(prefers-color-scheme: dark)');
+      let currentTheme = mediaDark.matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', currentTheme);
+
+      const setThemeIcon = (theme) => {
+        if (!themeButton) return;
+        themeButton.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        themeButton.innerHTML = theme === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"></path></svg>';
+      };
+      setThemeIcon(currentTheme);
+
+      themeButton?.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', currentTheme);
+        setThemeIcon(currentTheme);
+      });
+
+      menuButton?.addEventListener('click', () => {
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!expanded));
+        navLinks?.classList.toggle('open');
+      });
+
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 12);
+      }, { passive: true });
+
+      if (window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.body.classList.add('cursor-enabled');
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let ringX = mouseX;
+        let ringY = mouseY;
+
+        const moveCursor = (event) => {
+          mouseX = event.clientX;
+          mouseY = event.clientY;
+          cursor.style.transform = `translate(${mouseX - 5}px, ${mouseY - 5}px)`;
+        };
+
+        const animateRing = () => {
+          ringX += (mouseX - ringX) * 0.14;
+          ringY += (mouseY - ringY) * 0.14;
+          ring.style.transform = `translate(${ringX}px, ${ringY}px)`;
+          requestAnimationFrame(animateRing);
+        };
+
+        window.addEventListener('mousemove', moveCursor, { passive: true });
+        window.addEventListener('mousedown', () => document.body.classList.add('cursor-hover'));
+        window.addEventListener('mouseup', () => document.body.classList.remove('cursor-hover'));
+        interactiveItems.forEach((item) => {
+          item.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+          item.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+        animateRing();
+      }
+    })();
+  </script>
+</body>
+</html>

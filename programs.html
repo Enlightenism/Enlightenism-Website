@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Enlightenism Organization | Program Development</title>
+  <meta name="description" content="IronClaw Security and upcoming apps like Langy, Animal Fosterz, Awake Together, and Brain Games, all built to help people live better, safer lives." />
+  <meta name="theme-color" content="#05070d" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.9rem);
+
+      --space-1:  0.25rem;
+      --space-2:  0.5rem;
+      --space-3:  0.75rem;
+      --space-4:  1rem;
+      --space-5:  1.25rem;
+      --space-6:  1.5rem;
+      --space-8:  2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      --font-display: 'Zodiak', Georgia, serif;
+      --font-body: 'Satoshi', Inter, sans-serif;
+
+      --color-bg: #05070d;
+      --color-surface: rgba(12, 17, 28, 0.78);
+      --color-surface-2: rgba(17, 24, 39, 0.9);
+      --color-border: rgba(255, 255, 255, 0.14);
+      --color-divider: rgba(255, 255, 255, 0.09);
+      --color-text: #ffffff;
+      --color-text-muted: rgba(255, 255, 255, 0.8);
+      --color-text-faint: rgba(255, 255, 255, 0.55);
+
+      --color-gold-1: #f5d87a;
+      --color-gold-2: #d4af37;
+      --color-gold-3: #8f6a11;
+      --color-plat-1: #ffffff;
+      --color-plat-2: #e5e4e2;
+      --color-sky-1: #b9f0ff;
+      --color-sky-2: #87ceeb;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
+      --shadow-md: 0 18px 38px rgba(0, 0, 0, 0.28);
+      --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.42);
+
+      --radius-sm: 0.375rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1.2rem;
+      --radius-xl: 1.8rem;
+      --radius-full: 999px;
+
+      --content-default: 1200px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #05070d;
+      --color-surface: rgba(12, 17, 28, 0.78);
+      --color-surface-2: rgba(17, 24, 39, 0.9);
+      --color-text: #ffffff;
+      --color-text-muted: rgba(255, 255, 255, 0.8);
+      --color-text-faint: rgba(255, 255, 255, 0.55);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      text-size-adjust: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: var(--color-bg);
+    }
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      overflow-x: clip;
+      background: var(--color-bg);
+      cursor: none;
+    }
+    img, picture, video, canvas, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; color: inherit; }
+    button { cursor: pointer; background: none; border: none; }
+    ::selection { background: rgba(212, 175, 55, 0.34); color: #fff; }
+    :focus-visible {
+      outline: 2px solid var(--color-gold-2);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    .cursor,
+    .cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 120;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: 0;
+      transition: opacity 220ms ease;
+    }
+    .cursor {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-gold-1), var(--color-sky-1));
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.8);
+    }
+    .cursor-ring {
+      width: 48px;
+      height: 48px;
+      margin-left: -24px;
+      margin-top: -24px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12), rgba(135, 206, 235, 0.03));
+      backdrop-filter: blur(8px);
+    }
+    body.cursor-enabled .cursor,
+    body.cursor-enabled .cursor-ring { opacity: 1; }
+    body.cursor-hover .cursor-ring {
+      width: 82px;
+      height: 82px;
+      margin-left: -41px;
+      margin-top: -41px;
+      border-color: rgba(212, 175, 55, 0.5);
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.18), rgba(229, 228, 226, 0.04));
+    }
+
+    .interactive { cursor: none; }
+
+    .video-background-wrapper {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .video-background-wrapper video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+    .video-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(5,10,20,0.9), rgba(5,10,20,0.98)),
+        radial-gradient(circle at 20% 0%, rgba(135,206,235,0.16), transparent 40%),
+        radial-gradient(circle at 80% 100%, rgba(212,175,55,0.2), transparent 40%);
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--content-default));
+      margin-inline: auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(180deg, rgba(5, 7, 13, 0.9), rgba(5, 7, 13, 0.5));
+      border-bottom: 1px solid transparent;
+      transition: background 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+    }
+    .header.scrolled {
+      border-color: rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav {
+      min-height: 5.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-height: 44px;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(135,206,235,0.08));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 20px rgba(0,0,0,0.22);
+    }
+    .brand-mark svg { width: 22px; height: 22px; color: var(--color-text); }
+    .brand-title {
+      font-size: var(--text-sm);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background: linear-gradient(110deg, var(--color-gold-1), var(--color-gold-2), var(--color-plat-2));
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: metallic-title-shift 10s linear infinite;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .nav-links a,
+    .theme-toggle,
+    .menu-toggle {
+      min-height: 44px;
+      padding: 0.7rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      border: 1px solid transparent;
+      transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive), transform var(--transition-interactive);
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .theme-toggle:hover {
+      color: var(--color-text);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      padding: 0;
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      padding: 0;
+    }
+
+    main {
+      position: relative;
+      padding-block: clamp(var(--space-16), 9vw, var(--space-24));
+    }
+
+    .section-head {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: clamp(var(--space-8), 3vw, var(--space-12));
+      max-width: 60rem;
+    }
+    .section-kicker {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .section-head h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 1.05;
+      text-wrap: balance;
+    }
+    .section-head p {
+      color: var(--color-text-muted);
+      max-width: 58ch;
+    }
+
+    .programs-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-bottom: var(--space-16);
+    }
+    .program-card {
+      position: relative;
+      padding: 1.6rem 1.5rem 1.7rem;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      transition: transform var(--transition-interactive), box-shadow var(--transition-interactive), border-color var(--transition-interactive);
+    }
+    .program-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(135,206,235,0.2), transparent 45%),
+        radial-gradient(circle at 100% 100%, rgba(212,175,55,0.22), transparent 45%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    .program-card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 0 32px rgba(212,175,55,0.45),
+        0 0 48px rgba(135,206,235,0.35);
+      border-color: rgba(255,255,255,0.24);
+    }
+
+    .program-card.gold::before {
+      background:
+        radial-gradient(circle at 0% 0%, rgba(212,175,55,0.28), transparent 48%),
+        radial-gradient(circle at 100% 100%, rgba(229,228,226,0.18), transparent 42%);
+    }
+    .program-card.platinum::before {
+      background:
+        radial-gradient(circle at 0% 0%, rgba(229,228,226,0.26), transparent 48%),
+        radial-gradient(circle at 100% 100%, rgba(135,206,235,0.14), transparent 42%);
+    }
+    .program-card.sky::before {
+      background:
+        radial-gradient(circle at 0% 0%, rgba(135,206,235,0.32), transparent 48%),
+        radial-gradient(circle at 100% 100%, rgba(212,175,55,0.16), transparent 42%);
+    }
+
+    .program-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .program-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: var(--space-3);
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent 60%);
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+    .program-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--color-text);
+    }
+    .program-title {
+      font-size: var(--text-lg);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    .program-tagline {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: 0.8rem;
+    }
+    .program-body {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-4);
+    }
+
+    .program-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: var(--text-xs);
+    }
+    .badge-live {
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #08111d;
+      background: linear-gradient(135deg, var(--color-gold-1), var(--color-gold-2));
+      box-shadow: 0 0 18px rgba(212,175,55,0.6);
+    }
+    .badge-upcoming {
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      color: var(--color-text-faint);
+    }
+    .program-date {
+      font-variant-numeric: tabular-nums;
+      color: var(--color-text-muted);
+    }
+    .program-countdown {
+      font-variant-numeric: tabular-nums;
+      color: var(--color-text-faint);
+    }
+
+    .timeline-shell {
+      padding-block: var(--space-8);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .timeline-head {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: var(--space-6);
+      max-width: 58rem;
+    }
+    .timeline-head h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      line-height: 1.1;
+    }
+    .timeline-head p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    .timeline {
+      position: relative;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 1.4rem;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(180px, 1fr);
+      overflow-x: auto;
+      padding-bottom: 0.3rem;
+    }
+    .timeline::-webkit-scrollbar {
+      height: 4px;
+    }
+    .timeline::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.04);
+    }
+    .timeline::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, var(--color-gold-1), var(--color-sky-2));
+      border-radius: 999px;
+    }
+    .timeline-item {
+      position: relative;
+      padding: 0.9rem 0.8rem;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      min-height: 4.2rem;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 0.6rem;
+      left: 0.6rem;
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-gold-1), var(--color-sky-2));
+      box-shadow: 0 0 12px rgba(212,175,55,0.6);
+    }
+    .timeline-title {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      margin-left: 1.4rem;
+      margin-bottom: 0.25rem;
+    }
+    .timeline-caption {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      margin-left: 1.4rem;
+    }
+
+    .footer {
+      padding-block: 2rem 2.4rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+    .footer-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.9rem;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .footer-links a:hover { color: var(--color-text); }
+    .footer-branding {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: transparent;
+      background: linear-gradient(110deg, var(--color-gold-1), var(--color-plat-2), var(--color-gold-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    @keyframes metallic-title-shift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      body { cursor: auto; }
+      .cursor, .cursor-ring { display: none; }
+    }
+
+    @media (max-width: 1080px) {
+      .programs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      body { cursor: auto; }
+      .cursor, .cursor-ring { display: none; }
+
+      .menu-toggle { display: inline-flex; }
+      .theme-toggle { display: none; }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 0.6rem);
+        right: 1rem;
+        left: 1rem;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.8rem;
+        border-radius: 1.2rem;
+        background: rgba(8, 12, 20, 0.94);
+        border: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { width: 100%; justify-content: center; }
+
+      .programs-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-branding {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <div class="video-background-wrapper" aria-hidden="true">
+    <!-- Replace src with ./assets/videos/roadmap-bg.mp4 or another background loop -->
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="./assets/videos/roadmap-bg.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="video-overlay" aria-hidden="true"></div>
+
+  <header class="header" id="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html" aria-label="The Enlightenism Organization home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="24" cy="24" r="16"></circle>
+            <path d="M24 8v32"></path>
+            <path d="M12 24h24"></path>
+            <path d="M15 15l18 18"></path>
+          </svg>
+        </span>
+        <span class="brand-title">The Enlightenism Organization</span>
+      </a>
+
+      <button class="menu-toggle interactive" type="button" aria-expanded="false" aria-controls="nav-links" data-menu-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
+        <a class="interactive" href="./index.html">Home</a>
+        <a class="interactive" href="./services.html">Services</a>
+        <a class="interactive" href="./programs.html">Program Development</a>
+        <a class="interactive" href="./support.html">Help &amp; Support</a>
+        <button class="theme-toggle interactive" type="button" data-theme-toggle aria-label="Switch theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container" aria-labelledby="programs-heading">
+      <div class="section-head">
+        <span class="section-kicker">Program development</span>
+        <h1 id="programs-heading">Live security and upcoming programs built to help people directly.</h1>
+        <p>
+          These programs are being built to actually change how people live: protection while using AI, real language learning, lower-cost animal fostering, friend finding for awake people, and daily brain training.
+        </p>
+      </div>
+
+      <div class="programs-grid">
+        <!-- IronClaw Security – LIVE NOW -->
+        <article class="program-card gold interactive">
+          <div class="program-inner">
+            <div class="program-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7l7-4z" />
+                <path d="M10 11l2 2 4-4" />
+              </svg>
+            </div>
+            <h2 class="program-title">IronClaw Security</h2>
+            <p class="program-tagline">AI brain with layered protection against prompt injection.</p>
+            <p class="program-body">
+              IronClaw Security is an AI security system designed to protect users while they are using AI coding tools and other powerful models.
+              It runs a multi-layer Python and FastAPI stack that watches for prompt injection and hostile patterns, so people can experiment and build without getting quietly exploited by malicious prompts.
+            </p>
+            <div class="program-meta">
+              <span class="badge-live">Live now</span>
+              <span class="program-date">Available today</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Langy Language Learning App -->
+        <article class="program-card platinum interactive" data-launch="2026-10-01">
+          <div class="program-inner">
+            <div class="program-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 5h16" />
+                <path d="M4 12h8" />
+                <path d="M4 19h6" />
+                <path d="M14 19l2-4 2 4" />
+                <path d="M13 9l2-4 2 4" />
+              </svg>
+            </div>
+            <h2 class="program-title">Langy Language Learning</h2>
+            <p class="program-tagline">Full language understanding, not just memorized phrases.</p>
+            <p class="program-body">
+              Langy is being built to teach people the actual structure of a language: grammar, patterns, context, and how native speakers really use it in everyday life.
+              Instead of only teaching fixed phrases, Langy will help people reach a point where they can think and express themselves in the new language with confidence.
+            </p>
+            <div class="program-meta">
+              <span class="badge-upcoming">Upcoming</span>
+              <span class="program-date">Launch target: October 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Animal Fosterz -->
+        <article class="program-card sky interactive" data-launch="2026-12-01">
+          <div class="program-inner">
+            <div class="program-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 8c0-1.7 1.3-3 3-3s3 1.3 3 3-1.3 3-3 3-3-1.3-3-3z" />
+                <path d="M13 8c0-1.7 1.3-3 3-3s3 1.3 3 3-1.3 3-3 3-3-1.3-3-3z" />
+                <path d="M4 17c1.2-1.6 3.1-2.5 5-2.5s3.8.9 5 2.5" />
+                <path d="M9 20h6" />
+              </svg>
+            </div>
+            <h2 class="program-title">Animal Fosterz</h2>
+            <p class="program-tagline">Sharing ad revenue to lower the cost of fostering animals.</p>
+            <p class="program-body">
+              Animal Fosterz is being built so foster parents share advertising profits from the app, which helps cover food and care costs.
+              When fostering an animal is cheaper and supported, more people can say yes to fostering, which means more animals get safe homes instead of staying in cages.
+            </p>
+            <div class="program-meta">
+              <span class="badge-upcoming">Upcoming</span>
+              <span class="program-date">Launch target: December 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Awake Together -->
+        <article class="program-card platinum interactive" data-launch="2027-03-01">
+          <div class="program-inner">
+            <div class="program-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5a3 3 0 1 1-3 3 3 3 0 0 1 3-3z" />
+                <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                <path d="M4 10a2 2 0 1 1-2 2 2 2 0 0 1 2-2z" />
+                <path d="M20 10a2 2 0 1 1-2 2 2 2 0 0 1 2-2z" />
+              </svg>
+            </div>
+            <h2 class="program-title">Awake Together</h2>
+            <p class="program-tagline">Friend finding and connection for people who see the real world.</p>
+            <p class="program-body">
+              Awake Together is being built to help people who understand the real world we live in find each other, become friends, set up events, and even find partners.
+              The goal is to replace isolation with real community, where people can share plans, information, and support in person, not just online.
+            </p>
+            <div class="program-meta">
+              <span class="badge-upcoming">Upcoming</span>
+              <span class="program-date">Launch target: March 2027</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Brain Games -->
+        <article class="program-card sky interactive" data-launch="2027-04-01">
+          <div class="program-inner">
+            <div class="program-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 4a3 3 0 0 0-3 3v1a3 3 0 0 0-2 3v1a3 3 0 0 0 2 3v1a3 3 0 0 0 3 3" />
+                <path d="M15 4a3 3 0 0 1 3 3v1a3 3 0 0 1 2 3v1a3 3 0 0 1-2 3v1a3 3 0 0 1-3 3" />
+                <path d="M10 9h4" />
+                <path d="M10 13h2" />
+              </svg>
+            </div>
+            <h2 class="program-title">Brain Games</h2>
+            <p class="program-tagline">AI-generated brain games at different difficulty levels.</p>
+            <p class="program-body">
+              Brain Games is being built to generate daily mental challenges at different levels, so people can keep their minds sharp over time.
+              Instead of scrolling endlessly, people can run focused brain training sessions that feel like a game but still protect and grow their thinking power.
+            </p>
+            <div class="program-meta">
+              <span class="badge-upcoming">Upcoming</span>
+              <span class="program-date">Launch target: April 2027</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="timeline-shell">
+        <div class="timeline-head">
+          <span class="section-kicker">Roadmap timeline</span>
+          <h2>From IronClaw live now to global program rollout.</h2>
+          <p>
+            This is our timeline: start with live security, then language, animal fostering, awake community, and brain training, all tied back into the same mission. Donating large portions of each companies profits, to The Enlightenism Organization. If you own a company, you can be a part of the ecosystem too, and help fund the mission of The Enlightenism Organization.
+            Contact us to learn more about how to get involved. Why pay taxes to a corrupt government, when you can donate to a non-profit that is actually helping people. Saving in your overal tax charge every year.
+          </p>
+        </div>
+        <ol class="timeline" aria-label="Program roadmap timeline">
+          <li class="timeline-item">
+            <div class="timeline-title">IronClaw Security</div>
+            <div class="timeline-caption">Live now — protective AI for people using powerful models.</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-title">Langy</div>
+            <div class="timeline-caption">October 2026 — language learning that actually teaches how to think in a new language.</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-title">Animal Fosterz</div>
+            <div class="timeline-caption">December 2026 — lowering the cost of fostering animals so more families can help.</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-title">Awake Together</div>
+            <div class="timeline-caption">March 2027 — helping awake people find each other and stay in each other's lives.</div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-title">Brain Games</div>
+            <div class="timeline-caption">April 2027 — daily AI-powered brain games to keep minds sharp.</div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <span class="brand-title">The Enlightenism Organization</span>
+        <div class="footer-links">
+          <a class="interactive" href="./privacy.html">Privacy Policy</a>
+          <a class="interactive" href="./terms.html">Terms of Use</a>
+          <a class="interactive" href="./services.html">Services</a>
+          <a class="interactive" href="./programs.html">Program Development</a>
+          <a class="interactive" href="./support.html">Help &amp; Support</a>
+        </div>
+      </div>
+      <div class="footer-branding">
+        <span>The Enlightenism Organization TM © 2026</span>
+        <span>Powered By Universal Rejuvenation Inc.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themeButton = document.querySelector('[data-theme-toggle]');
+      const menuButton = document.querySelector('[data-menu-toggle]');
+      const navLinks = document.getElementById('nav-links');
+      const header = document.getElementById('site-header');
+      const cursor = document.querySelector('.cursor');
+      const ring = document.querySelector('.cursor-ring');
+      const interactiveItems = document.querySelectorAll('.interactive');
+      const mediaDark = window.matchMedia('(prefers-color-scheme: dark)');
+      let currentTheme = mediaDark.matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', currentTheme);
+
+      const setThemeIcon = (theme) => {
+        if (!themeButton) return;
+        themeButton.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        themeButton.innerHTML = theme === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"></path></svg>';
+      };
+      setThemeIcon(currentTheme);
+
+      themeButton?.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', currentTheme);
+        setThemeIcon(currentTheme);
+      });
+
+      menuButton?.addEventListener('click', () => {
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!expanded));
+        navLinks?.classList.toggle('open');
+      });
+
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 12);
+      }, { passive: true });
+
+      if (window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.body.classList.add('cursor-enabled');
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let ringX = mouseX;
+        let ringY = mouseY;
+
+        const moveCursor = (event) => {
+          mouseX = event.clientX;
+          mouseY = event.clientY;
+          cursor.style.transform = `translate(${mouseX - 5}px, ${mouseY - 5}px)`;
+        };
+
+        const animateRing = () => {
+          ringX += (mouseX - ringX) * 0.14;
+          ringY += (mouseY - ringY) * 0.14;
+          ring.style.transform = `translate(${ringX}px, ${ringY}px)`;
+          requestAnimationFrame(animateRing);
+        };
+
+        window.addEventListener('mousemove', moveCursor, { passive: true });
+        window.addEventListener('mousedown', () => document.body.classList.add('cursor-hover'));
+        window.addEventListener('mouseup', () => document.body.classList.remove('cursor-hover'));
+        interactiveItems.forEach((item) => {
+          item.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+          item.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+        animateRing();
+      }
+
+      // Simple countdown display (days remaining) if you want it later:
+      const cards = document.querySelectorAll('.program-card[data-launch]');
+      cards.forEach((card) => {
+        const launchStr = card.getAttribute('data-launch');
+        if (!launchStr) return;
+        const launchDate = new Date(launchStr + 'T00:00:00');
+        const now = new Date();
+        const diffMs = launchDate.getTime() - now.getTime();
+        const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+        const meta = card.querySelector('.program-meta');
+        if (!meta) return;
+        const countdown = document.createElement('span');
+        countdown.className = 'program-countdown';
+        if (diffMs <= 0) {
+          countdown.textContent = 'Launch window reached';
+        } else {
+          countdown.textContent = days + ' days until launch (approximate)';
+        }
+        meta.appendChild(countdown);
+      });
+    })();
+  </script>
+</body>
+</html>

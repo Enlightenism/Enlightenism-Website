@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Enlightenism Organization | Terms of Use</title>
+  <meta name="description" content="Terms of Use for The Enlightenism Organization and related programs, defining site rules, disclaimers, and limitations of liability for our charity and multi-business ecosystem." />
+  <meta name="theme-color" content="#05070d" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.9rem);
+
+      --space-1:  0.25rem;
+      --space-2:  0.5rem;
+      --space-3:  0.75rem;
+      --space-4:  1rem;
+      --space-5:  1.25rem;
+      --space-6:  1.5rem;
+      --space-8:  2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      --font-display: 'Zodiak', Georgia, serif;
+      --font-body: 'Satoshi', Inter, sans-serif;
+
+      --color-bg: #05070d;
+      --color-surface: rgba(12, 17, 28, 0.88);
+      --color-surface-2: rgba(17, 24, 39, 0.96);
+      --color-border: rgba(255, 255, 255, 0.14);
+      --color-divider: rgba(255, 255, 255, 0.09);
+      --color-text: #ffffff;
+      --color-text-muted: rgba(255, 255, 255, 0.82);
+      --color-text-faint: rgba(255, 255, 255, 0.55);
+
+      --color-gold-1: #f5d87a;
+      --color-gold-2: #d4af37;
+      --color-plat-2: #e5e4e2;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
+      --shadow-md: 0 18px 38px rgba(0, 0, 0, 0.28);
+      --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.42);
+
+      --radius-sm: 0.375rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1.2rem;
+      --radius-xl: 1.8rem;
+      --radius-full: 999px;
+
+      --content-default: 1200px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #05070d;
+      --color-surface: rgba(12, 17, 28, 0.88);
+      --color-surface-2: rgba(17, 24, 39, 0.96);
+      --color-text: #ffffff;
+      --color-text-muted: rgba(255, 255, 255, 0.82);
+      --color-text-faint: rgba(255, 255, 255, 0.55);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      text-size-adjust: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: var(--color-bg);
+    }
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-text);
+      overflow-x: clip;
+      background: var(--color-bg);
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; cursor: pointer; background: none; border: none; }
+
+    .container {
+      width: min(100% - 2rem, var(--content-default));
+      margin-inline: auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(180deg, rgba(5, 7, 13, 0.9), rgba(5, 7, 13, 0.5));
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav {
+      min-height: 5.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-height: 44px;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(135,206,235,0.08));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 20px rgba(0,0,0,0.22);
+    }
+    .brand-mark svg { width: 22px; height: 22px; color: var(--color-text); }
+    .brand-title {
+      font-size: var(--text-sm);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background: linear-gradient(110deg, var(--color-gold-1), var(--color-gold-2), var(--color-plat-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      min-height: 44px;
+      padding: 0.7rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      border: 1px solid transparent;
+      transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive);
+    }
+    .nav-links a:hover {
+      color: var(--color-text);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    main {
+      padding-block: clamp(var(--space-12), 7vw, var(--space-20));
+    }
+
+    .terms-shell {
+      border-radius: var(--radius-xl);
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+      padding: clamp(var(--space-8), 4vw, var(--space-12));
+    }
+    .terms-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-4);
+    }
+    .terms-meta {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-6);
+    }
+
+    .terms-section {
+      margin-bottom: var(--space-6);
+      border-top: 1px solid var(--color-divider);
+      padding-top: var(--space-4);
+    }
+    .terms-section:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+    .terms-section h2 {
+      font-size: var(--text-lg);
+      margin-bottom: 0.5rem;
+    }
+    .terms-section p,
+    .terms-section ul {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    .terms-section ul {
+      margin-top: 0.6rem;
+      padding-left: 1.2rem;
+      list-style: disc;
+    }
+    .terms-section li {
+      margin-bottom: 0.4rem;
+    }
+
+    .footer {
+      padding-block: 2rem 2.4rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      margin-top: var(--space-12);
+    }
+    .footer-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.9rem;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .footer-links a:hover { color: var(--color-text); }
+    .footer-branding {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: transparent;
+      background: linear-gradient(110deg, var(--color-gold-1), var(--color-plat-2), var(--color-gold-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    @media (max-width: 900px) {
+      .terms-shell {
+        padding: var(--space-8) var(--space-6);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-branding {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="16"></circle>
+            <path d="M24 8v32"></path>
+            <path d="M12 24h24"></path>
+            <path d="M15 15l18 18"></path>
+          </svg>
+        </span>
+        <span class="brand-title">The Enlightenism Organization</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./services.html">Services</a>
+        <a href="./programs.html">Program Development</a>
+        <a href="./support.html">Help &amp; Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <article class="terms-shell">
+        <h1 class="terms-title">Terms of Use</h1>
+        <div class="terms-meta">
+          Effective date: 09 July 2026 &mdash; please read carefully before using our websites or services.
+        </div>
+
+        <section class="terms-section">
+          <h2>1. Acceptance of these Terms</h2>
+          <p>
+            By accessing or using any website, application, or service operated by or on behalf of The Enlightenism Organization and Universal Rejuvenation Inc., you agree to be bound by these Terms of Use and our Privacy Policy.
+          </p>
+          <p>
+            If you do not agree to these Terms, you must not use our websites or services. We may update these Terms from time to time, and your continued use after changes are posted constitutes acceptance of the updated Terms.
+          </p>
+        </section>
+
+        <section class="terms-section">
+          <h2>2. Charitable and multi‑business context</h2>
+          <p>
+            The Enlightenism Organization operates as a charitable foundation supported by multiple related businesses and programs, including IronClaw Security, Taylor Immigration Services, Taylor Real Estate, Taylor Land Development, and future applications.
+          </p>
+          <p>
+            Information on our websites is intended to describe our mission, services, and programs, and does not guarantee any specific outcome such as residency approvals, property transactions, land development, community placements, or financial results.
+          </p>
+        </section>
+
+        <section class="terms-section">
+          <h2>3. Use of the site and informational nature</h2>
+          <p>
+            Our websites and content are provided for general informational and educational purposes only. They do not constitute legal, immigration, financial, medical, or professional advice, and should not be used as a sole basis for major personal decisions.
+          </p>
+          <p>
+            You are responsible for seeking independent professional advice where necessary, and for complying with all laws and regulations that apply to you and your situation.
+          </p>
+        </section>
+
+        <section class="terms-section">
+          <h2>4. Membership, accounts, and donations</h2>
+          <p>
+            Membership in The Enlightenism Organization is free and does not create an employment relationship or guarantee access to any specific community, project, or benefit. We reserve the right to accept, decline, suspend, or remove memberships at our discretion where necessary to protect the mission or other members.
+          </p>
+          <p>
+            Donations made through our websites or connected payment platforms are voluntary contributions intended to support our charitable and community-building activities. Unless otherwise required by law or explicitly stated, donations are generally non‑refundable because they are immediately allocated to planning, infrastructure, and support work.
+          </p>
+        </section>
+
+        <section class="terms-section">
+          <h2>5. Prohibited activities</h2>
+          <p>
+            When using our websites or services, you agree not to:</p>
+          <ul>
+            <li>Engage in any unlawful, fraudulent, or harmful activity.</li>
+            <li>Attempt to bypass, disable, or interfere with security controls or protections, including systems like IronClaw Security.</li>
+            <li>Upload or transmit malicious code, prompts, or content intended to compromise systems or other users.</li>
+            <li>Misrepresent your identity, skills, or affiliations in membership forms or communications.</li>
+            <li>Use our sites or content to harass, abuse, or harm any person or group.</li>
+          </ul>
+        </section>
+
+        <section class="terms-section">
+          <h2>6. Intellectual property</h2>
+          <p>
+            All content on our websites, including text, graphics, logos, icons, images, videos, software, and designs, is owned or licensed by The Enlightenism Organization, Universal Rejuvenation Inc., or their licensors, and is protected by intellectual property laws.
+          </p>
+          <p>
+            You may view and print content for your personal, non‑commercial use. You may not copy, reproduce, modify, distribute, or create derivative works from our content without our prior written consent, except where such use is expressly permitted by law.
+          </p>
+        </section>
+
+        <section class="terms-section">
+          <h2>7. Third‑party links and services</h2>
+          <p>
+            Our websites may contain links to third‑party websites or services, including payment processors, partners, or informational resources. We do not control and are not responsible for the content, privacy practices, or operations of those third parties.
+          </p>
+          <p>
+            Accessing third‑party sites is at your own risk, and those sites will have their own terms and policies that you should review independently.
+          </p>
+        </section>
+
+        <section class="terms-section">
+          <h2>8. Disclaimers</h2>
+          <p>
+            To the maximum extent permitted by law, our websites and services are provided “as is” and “as available”, without warranties of any kind, whether express, implied, or statutory, including without limitation warranties of accuracy, completeness, non‑infringement, merchantability, or fitness for a particular purpose.
+          </p>
+          <p>
+            We do not guarantee uninterrupted or error‑free operation of our websites or services, or that they will be free of viruses or other harmful components. You are responsible for using appropriate security and backup measures.
+          </p>
+        </section>
+
+        <section class="terms-section">
+          <h2>9. Limitation of liability</h2>
+          <p>
+            To the maximum extent permitted by law, The Enlightenism Organization, Universal Rejuvenation Inc., their directors, officers, employees, volunteers, and partners will not be liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, including loss of income, profit, goodwill, data, or savings, arising out of or related to your use of our websites, services, or information.
+          </p>
+          <p>
+            To the maximum extent permitted by law, our total liability for any direct damages arising from or related to your use of our websites or services will be limited to the amount you have paid to us, if any, for the specific service or donation related to the claim. Nothing in these Terms excludes or limits liability where such exclusion or limitation is prohibited by law.
+          </p>
+        </section>
+
+        <section class="terms-section">
+          <h2>10. Indemnification</h2>
+          <p>
+            You agree to indemnify, defend, and hold harmless The Enlightenism Organization, Universal Rejuvenation Inc., and their directors, officers, employees, volunteers, and partners from and against any claims, liabilities, damages, losses, and expenses, including reasonable legal fees, arising out of or related to your use of our websites or services, your violation of these Terms, or your infringement of any rights of another person or entity.
+          </p>
+        </section>
+
+        <section class="terms-section">
+          <h2>11. Governing law and disputes</h2>
+          <p>
+            These Terms, and any dispute or claim arising out of or relating to them or your use of our websites or services, will be governed by the laws of the jurisdiction where Universal Rejuvenation Inc. is officially registered, without regard to conflict‑of‑law principles. You agree that courts or tribunals in that jurisdiction will have exclusive jurisdiction over such disputes, except where applicable law requires another venue.
+          </p>
+        </section>
+
+        <section class="terms-section">
+          <h2>12. Changes to these Terms</h2>
+          <p>
+            We may modify these Terms of Use from time to time. When we do, we will update the effective date at the top of this page and may provide additional notice where appropriate. Your continued use of our websites or services after changes are posted means you accept the updated Terms.
+          </p>
+        </section>
+
+        <section class="terms-section">
+          <h2>13. Contact</h2>
+          <p>
+            If you have questions about these Terms, you can contact us at:
+          </p>
+          <ul>
+            <li><strong>Email:</strong> legal@enlightenism.org (placeholder &mdash; replace with your actual address).</li>
+            <li><strong>Postal address:</strong> [Insert official mailing address for The Enlightenism Organization / Universal Rejuvenation Inc.].</li>
+          </ul>
+        </section>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <span class="brand-title">The Enlightenism Organization</span>
+        <div class="footer-links">
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="./terms.html">Terms of Use</a>
+          <a href="./services.html">Services</a>
+          <a href="./programs.html">Program Development</a>
+          <a href="./support.html">Help &amp; Support</a>
+        </div>
+      </div>
+      <div class="footer-branding">
+        <span>The Enlightenism Organization TM © 2026</span>
+        <span>Powered By Universal Rejuvenation Inc.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

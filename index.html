@@ -3,545 +3,1376 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Enlightenism Organization | Future Systems, Communities, and Human Resilience</title>
-  <meta
-    name="description"
-    content="The Enlightenism Organization is a premium mission-led ecosystem spanning products, communities, relocation pathways, and long-horizon human resilience."
-  />
-  <meta name="theme-color" content="#04070c" />
-  <meta property="og:title" content="The Enlightenism Organization" />
-  <meta
-    property="og:description"
-    content="Products, communities, roadmap, and a long-range operating vision for real-world impact."
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="./assets/images/og-cover.jpg" />
-  <meta property="og:url" content="https://moving-forward.ca/" />
-  <meta name="twitter:card" content="summary_large_image" />
-
+  <title>The Enlightenism Organization | Main Site</title>
+  <meta name="description" content="The Enlightenism Organization is building businesses, programs, and off-grid communities to help families relocate into an independent, sustainable future." />
+  <meta name="theme-color" content="#05070d" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="./styles.css" />
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.9rem);
+      --text-3xl:  clamp(2.8rem, 1rem + 4vw, 5.6rem);
+      --text-hero: clamp(3.5rem, 1rem + 7vw, 8rem);
+
+      --space-1:  0.25rem;
+      --space-2:  0.5rem;
+      --space-3:  0.75rem;
+      --space-4:  1rem;
+      --space-5:  1.25rem;
+      --space-6:  1.5rem;
+      --space-8:  2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --space-32: 8rem;
+
+      --font-display: 'Zodiak', Georgia, serif;
+      --font-body: 'Satoshi', Inter, sans-serif;
+
+      --color-bg: #05070d;
+      --color-surface: rgba(12, 17, 28, 0.72);
+      --color-surface-2: rgba(17, 24, 39, 0.86);
+      --color-border: rgba(255, 255, 255, 0.14);
+      --color-divider: rgba(255, 255, 255, 0.09);
+      --color-text: #ffffff;
+      --color-text-muted: rgba(255, 255, 255, 0.78);
+      --color-text-faint: rgba(255, 255, 255, 0.54);
+
+      --color-primary-gold-1: #f5d87a;
+      --color-primary-gold-2: #d4af37;
+      --color-primary-gold-3: #8f6a11;
+      --color-primary-plat-1: #ffffff;
+      --color-primary-plat-2: #e5e4e2;
+      --color-primary-plat-3: #b7b9bf;
+      --color-primary-sky-1: #b9f0ff;
+      --color-primary-sky-2: #87ceeb;
+      --color-primary-sky-3: #4a8cff;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
+      --shadow-md: 0 18px 38px rgba(0, 0, 0, 0.28);
+      --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.42);
+
+      --radius-sm: 0.375rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1.2rem;
+      --radius-xl: 1.8rem;
+      --radius-full: 999px;
+
+      --content-default: 1200px;
+      --content-wide: 1380px;
+
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #05070d;
+      --color-surface: rgba(12, 17, 28, 0.72);
+      --color-surface-2: rgba(17, 24, 39, 0.86);
+      --color-text: #ffffff;
+      --color-text-muted: rgba(255, 255, 255, 0.78);
+      --color-text-faint: rgba(255, 255, 255, 0.54);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      text-size-adjust: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: var(--color-bg);
+      scrollbar-color: rgba(212, 175, 55, 0.55) rgba(255,255,255,0.06);
+    }
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(135, 206, 235, 0.14), transparent 22%),
+        radial-gradient(circle at 85% 15%, rgba(212, 175, 55, 0.18), transparent 25%),
+        radial-gradient(circle at 50% 90%, rgba(229, 228, 226, 0.1), transparent 30%),
+        linear-gradient(180deg, #03050a 0%, #07101d 38%, #05070d 100%);
+      overflow-x: clip;
+      cursor: none;
+    }
+    img, picture, video, canvas, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; color: inherit; }
+    button { cursor: pointer; background: none; border: none; }
+    ::selection { background: rgba(212, 175, 55, 0.34); color: #fff; }
+    :focus-visible {
+      outline: 2px solid var(--color-primary-gold-2);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 999;
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius-full);
+      background: #fff;
+      color: #000;
+      transition: top var(--transition-interactive);
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .cursor,
+    .cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 120;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      opacity: 0;
+      transition: opacity 220ms ease;
+    }
+    .cursor {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-primary-gold-1), var(--color-primary-sky-1));
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.8);
+    }
+    .cursor-ring {
+      width: 48px;
+      height: 48px;
+      margin-left: -24px;
+      margin-top: -24px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12), rgba(135, 206, 235, 0.03));
+      backdrop-filter: blur(8px);
+    }
+    body.cursor-enabled .cursor,
+    body.cursor-enabled .cursor-ring { opacity: 1; }
+    body.cursor-hover .cursor-ring {
+      width: 82px;
+      height: 82px;
+      margin-left: -41px;
+      margin-top: -41px;
+      border-color: rgba(212, 175, 55, 0.5);
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.18), rgba(229, 228, 226, 0.04));
+    }
+
+    .site-shell {
+      position: relative;
+      isolation: isolate;
+    }
+    .site-shell::before,
+    .site-shell::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+    }
+    .site-shell::before {
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), transparent 90%);
+    }
+    .site-shell::after {
+      background: radial-gradient(circle at center, rgba(255,255,255,0.06), transparent 58%);
+      filter: blur(60px);
+      z-index: -3;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--content-default));
+      margin-inline: auto;
+    }
+    .wide-container {
+      width: min(100% - 2rem, var(--content-wide));
+      margin-inline: auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(180deg, rgba(5, 7, 13, 0.9), rgba(5, 7, 13, 0.5));
+      border-bottom: 1px solid transparent;
+      transition: background 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+    }
+    .header.scrolled {
+      border-color: rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav {
+      min-height: 5.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-height: 44px;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(135,206,235,0.08));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 20px rgba(0,0,0,0.22);
+    }
+    .brand-mark svg { width: 22px; height: 22px; color: var(--color-text); }
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
+      font-size: var(--text-sm);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background: linear-gradient(110deg, var(--color-primary-gold-1) 10%, var(--color-primary-gold-2) 35%, var(--color-primary-plat-2) 55%, var(--color-primary-sky-2) 75%, var(--color-primary-gold-3) 100%);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: metallic-title-shift 10s linear infinite;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .nav-links a,
+    .theme-toggle,
+    .menu-toggle {
+      min-height: 44px;
+      padding: 0.7rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      border: 1px solid transparent;
+      transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive), transform var(--transition-interactive);
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .theme-toggle:hover {
+      color: var(--color-text);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      padding: 0;
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      padding: 0;
+    }
+
+    main { position: relative; }
+    section {
+      position: relative;
+      padding-block: clamp(var(--space-16), 9vw, var(--space-32));
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      align-items: center;
+      padding-top: 7rem;
+      overflow: clip;
+    }
+    .hero-video,
+    .hero-canvas,
+    .hero-overlay,
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      opacity: 0.26;
+      z-index: -5;
+    }
+    .hero-video-fallback {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(135,206,235,0.24), transparent 22%),
+        radial-gradient(circle at 70% 20%, rgba(212,175,55,0.18), transparent 26%),
+        radial-gradient(circle at 50% 70%, rgba(229,228,226,0.08), transparent 34%),
+        linear-gradient(180deg, rgba(1,5,12,0.95) 0%, rgba(6,10,19,0.92) 100%);
+      z-index: -6;
+    }
+    .hero-canvas { width: 100%; height: 100%; z-index: -4; }
+    .hero-overlay {
+      background:
+        linear-gradient(180deg, rgba(4,8,16,0.12), rgba(4,8,16,0.84)),
+        radial-gradient(circle at center, rgba(255,255,255,0.03), transparent 60%);
+      z-index: -3;
+    }
+    .hero-grid {
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), transparent 100%);
+      z-index: -2;
+    }
+
+    .hero-layout {
+      display: grid;
+      gap: clamp(var(--space-10), 4vw, var(--space-20));
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      align-items: end;
+    }
+
+    .hero-copy h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-hero);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      max-width: 11ch;
+      text-wrap: balance;
+      margin-bottom: var(--space-6);
+    }
+    .hero-title {
+      background: linear-gradient(110deg, var(--color-primary-plat-1) 10%, var(--color-primary-gold-1) 30%, var(--color-primary-plat-2) 50%, var(--color-primary-sky-1) 70%, var(--color-primary-gold-2) 100%);
+      background-size: 220% 220%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: metallic-title-shift 12s linear infinite;
+      filter: drop-shadow(0 0 28px rgba(255,255,255,0.08));
+    }
+    .hero-copy p {
+      max-width: 58ch;
+      color: var(--color-text-muted);
+      font-size: var(--text-base);
+    }
+    .hero-actions {
+      margin-top: var(--space-8);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      min-height: 48px;
+      padding: 0.95rem 1.3rem;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      font-size: var(--text-sm);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      transition: transform var(--transition-interactive), box-shadow var(--transition-interactive), border-color var(--transition-interactive), background var(--transition-interactive), color var(--transition-interactive);
+      will-change: transform;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+    .btn-primary {
+      color: #08111d;
+      background: linear-gradient(135deg, var(--color-primary-gold-1), var(--color-primary-gold-2), var(--color-primary-plat-2));
+      box-shadow: 0 18px 35px rgba(212, 175, 55, 0.24);
+    }
+    .btn-primary:hover { box-shadow: 0 26px 46px rgba(212, 175, 55, 0.34); }
+    .btn-secondary {
+      color: var(--color-text);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.14);
+      backdrop-filter: blur(14px);
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.08); }
+
+    .hero-panel {
+      position: relative;
+      padding: 1.35rem;
+      border-radius: 1.6rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(212,175,55,0.18), transparent 32%, rgba(135,206,235,0.08) 68%, transparent 100%);
+      pointer-events: none;
+    }
+    .hero-panel-head {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      z-index: 1;
+    }
+    .hero-panel-head strong {
+      font-size: var(--text-sm);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .status-pill {
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #07101d;
+      background: linear-gradient(135deg, var(--color-primary-plat-1), var(--color-primary-gold-2));
+    }
+    .signal-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 0.9rem;
+    }
+    .signal-card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0.8rem;
+      align-items: center;
+      padding: 0.95rem 1rem;
+      border-radius: 1rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .signal-dot {
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-primary-sky-1), var(--color-primary-gold-1));
+      box-shadow: 0 0 12px rgba(135,206,235,0.65);
+    }
+    .signal-copy strong {
+      display: block;
+      font-size: var(--text-sm);
+    }
+    .signal-copy span,
+    .signal-value {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-meta {
+      margin-top: var(--space-8);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      max-width: 52rem;
+    }
+    .meta-card {
+      padding: 1rem 1rem 1.15rem;
+      border-radius: 1.2rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+    }
+    .meta-card span {
+      display: block;
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .meta-card strong {
+      font-size: var(--text-lg);
+      line-height: 1.15;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: clamp(var(--space-8), 3vw, var(--space-12));
+      max-width: 60rem;
+    }
+    .section-head h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 1;
+      text-wrap: balance;
+    }
+    .section-head p {
+      color: var(--color-text-muted);
+      max-width: 58ch;
+    }
+    .section-kicker {
+      display: inline-block;
+      width: fit-content;
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .glass-panel {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .glass-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), transparent 28%, rgba(212,175,55,0.06) 60%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .ecosystem-layout {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: minmax(0, 1fr);
+      align-items: stretch;
+    }
+    .ecosystem-map {
+      padding: clamp(1.25rem, 2vw, 1.8rem);
+      min-height: 34rem;
+    }
+    .node-core {
+      position: relative;
+      height: 100%;
+      min-height: 31rem;
+      border-radius: 1.5rem;
+      background:
+        radial-gradient(circle at center, rgba(212,175,55,0.14), transparent 16%),
+        linear-gradient(180deg, rgba(5,10,20,0.92), rgba(8,16,28,0.96));
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      padding: 1.5rem;
+    }
+    .node-core svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .orbit-node {
+      position: absolute;
+      width: 11.5rem;
+      padding: 0.9rem;
+      border-radius: 1rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-sm);
+    }
+    .orbit-node strong {
+      display: block;
+      font-size: var(--text-sm);
+      margin-bottom: 0.2rem;
+    }
+    .orbit-node span {
+      display: block;
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      line-height: 1.4;
+    }
+    .orbit-node.node-a { top: 16%; left: 9%; }
+    .orbit-node.node-b { top: 18%; right: 9%; }
+    .orbit-node.node-c { bottom: 20%; left: 12%; }
+    .orbit-node.node-d { bottom: 18%; right: 12%; }
+
+    .core-center {
+      position: relative;
+      width: min(42vw, 18rem);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), transparent 26%),
+        conic-gradient(from 180deg, rgba(212,175,55,0.1), rgba(135,206,235,0.18), rgba(229,228,226,0.08), rgba(212,175,55,0.1));
+      border: 1px solid rgba(255,255,255,0.12);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 80px rgba(135,206,235,0.14);
+    }
+    .core-center::before,
+    .core-center::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      inset: 1rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .core-center::after {
+      inset: 2rem;
+      border-color: rgba(212,175,55,0.16);
+    }
+    .core-center strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 2.2vw, 2.4rem);
+      line-height: 1;
+      text-align: center;
+      max-width: 8ch;
+    }
+    .core-center span {
+      display: block;
+      margin-top: 0.6rem;
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .roadmap-wrap {
+      display: grid;
+      gap: 1rem;
+    }
+    .roadmap-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      padding: 1.2rem;
+      border-radius: 1.35rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .roadmap-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -15% -55% auto;
+      width: 14rem;
+      height: 14rem;
+      background: radial-gradient(circle, rgba(212,175,55,0.12), transparent 60%);
+      pointer-events: none;
+    }
+    .roadmap-number {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--color-primary-gold-1), var(--color-primary-sky-2));
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.16);
+    }
+    .roadmap-copy strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: var(--text-lg);
+      line-height: 1.2;
+    }
+    .roadmap-copy p {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      max-width: 62ch;
+    }
+
+    .metrics-band {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 1.2rem;
+    }
+    .metric-panel {
+      padding: 1.2rem;
+      border-radius: 1.2rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+    .metric-panel span {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .metric-panel strong {
+      display: block;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      line-height: 1;
+      margin-bottom: 0.45rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .metric-panel p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    .footer {
+      padding-block: 2rem 2.4rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+    .footer-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.9rem;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .footer-links a:hover { color: var(--color-text); }
+    .footer-branding {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: transparent;
+      background: linear-gradient(110deg, var(--color-primary-gold-1), var(--color-primary-plat-2), var(--color-primary-gold-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .interactive { cursor: none; }
+
+    .reveal { opacity: 1; }
+    @supports (animation-timeline: view()) {
+      .reveal {
+        opacity: 0;
+        animation: reveal-fade linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 70%;
+      }
+    }
+
+    @keyframes reveal-fade { to { opacity: 1; } }
+    @keyframes metallic-title-shift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 220% 50%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      body { cursor: auto; }
+      .cursor, .cursor-ring { display: none; }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-layout,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-meta,
+      .metrics-band {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      body { cursor: auto; }
+      .cursor, .cursor-ring { display: none; }
+
+      .menu-toggle { display: inline-flex; }
+      .theme-toggle { display: none; }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 0.6rem);
+        right: 1rem;
+        left: 1rem;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.8rem;
+        border-radius: 1.2rem;
+        background: rgba(8, 12, 20, 0.94);
+        border: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow-lg);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { width: 100%; justify-content: center; }
+      .hero {
+        min-height: auto;
+        padding-top: 6.5rem;
+        padding-bottom: 4rem;
+      }
+      .hero-copy h1 { max-width: 9ch; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .hero-meta,
+      .metrics-band { grid-template-columns: 1fr; }
+      .node-core {
+        display: grid;
+        gap: 1.2rem;
+        align-content: start;
+        justify-items: stretch;
+      }
+      .node-core svg { display: none; }
+      .orbit-node {
+        position: relative;
+        width: 100%;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        margin-bottom: 0.8rem;
+      }
+      .core-center {
+        width: 100%;
+        max-width: 16rem;
+        margin-inline: auto;
+      }
+      .footer-branding {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
 
-  <div class="site-bg" aria-hidden="true"></div>
-  <div class="site-grid" aria-hidden="true"></div>
-  <div class="site-noise" aria-hidden="true"></div>
-
-  <header class="site-header" id="top">
-    <div class="container header-shell">
-      <a class="brand" href="./index.html" aria-label="The Enlightenism Organization home">
-        <span class="brand-mark" aria-hidden="true">
-          <span class="brand-core"></span>
-          <span class="brand-ring brand-ring-a"></span>
-          <span class="brand-ring brand-ring-b"></span>
-        </span>
-        <span class="brand-text">
-          <strong>The Enlightenism Organization</strong>
-          <em>Future Systems / Human Resilience / Community Vision</em>
-        </span>
-      </a>
-
-      <nav class="primary-nav" aria-label="Primary">
-        <a href="./index.html" aria-current="page">Home</a>
-        <a href="./mission.html">Mission</a>
-        <a href="./ecosystem.html">Ecosystem</a>
-        <a href="./communities.html">Communities</a>
-        <a href="./roadmap.html">Roadmap</a>
-        <a href="./contact.html">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <button
-          class="theme-toggle"
-          type="button"
-          aria-label="Toggle color theme"
-          data-theme-toggle
-        >
-          <span class="theme-toggle-dot"></span>
-        </button>
-        <a class="button button-nav" href="./contact.html">Register interest</a>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero-section">
-      <div class="hero-media-layer" aria-hidden="true">
-        <video
-          class="hero-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          poster="./assets/images/hero-poster.jpg"
-        >
-          <source src="./assets/video/hero-main.webm" type="video/webm" />
-          <source src="./assets/video/hero-main.mp4" type="video/mp4" />
-        </video>
-        <div class="hero-video-fallback">
-          <div class="fallback-note">
-            <span>Hero video placeholder</span>
-            <code>./assets/video/hero-main.mp4</code>
-          </div>
-        </div>
-        <div class="hero-video-overlay"></div>
-      </div>
-
-      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
-
-      <div class="container hero-shell">
-        <div class="hero-copy" data-reveal>
-          <p class="eyebrow">
-            Premium brand architecture for products, communities, and long-range systems
-          </p>
-
-          <h1>
-            Build powerful businesses. Fund meaningful systems.
-            <span class="gradient-text">Create a lasting future.</span>
-          </h1>
-
-          <p class="hero-lead">
-            The Enlightenism Organization is the flagship public-facing platform for an
-            expanding ecosystem of products, mission infrastructure, and future communities
-            designed to improve resilience, opportunity, and long-horizon quality of life.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button button-primary" href="./roadmap.html">View the roadmap</a>
-            <a class="button button-secondary" href="./ecosystem.html">Explore the ecosystem</a>
-          </div>
-
-          <ul class="hero-signals" role="list" aria-label="Homepage highlights">
-            <li>3D flagship experience.</li>
-            <li>Multi-page premium brand site.</li>
-            <li>Mission, products, communities, and future expansion.</li>
-          </ul>
-        </div>
-
-        <aside class="hero-panel glass-card" data-reveal aria-label="Mission overview">
-          <div class="panel-intro">
-            <p class="panel-kicker">System Preview</p>
-            <h2>One umbrella vision. Multiple engines of momentum.</h2>
-          </div>
-
-          <div class="panel-grid">
-            <article class="mini-panel">
-              <span class="mini-panel-index">01</span>
-              <h3>Products</h3>
-              <p>Build digital businesses that can scale and create durable value.</p>
-            </article>
-
-            <article class="mini-panel">
-              <span class="mini-panel-index">02</span>
-              <h3>Organization</h3>
-              <p>Structure a larger mission platform with charitable and human outcomes.</p>
-            </article>
-
-            <article class="mini-panel">
-              <span class="mini-panel-index">03</span>
-              <h3>Communities</h3>
-              <p>Support land, systems, family life, and future relocation pathways.</p>
-            </article>
-
-            <article class="mini-panel">
-              <span class="mini-panel-index">04</span>
-              <h3>Expansion</h3>
-              <p>Grow a long-range ecosystem that can compound over time.</p>
-            </article>
-          </div>
-        </aside>
-      </div>
-
-      <div class="hero-bottom-bar container" data-reveal>
-        <div class="hero-stat glass-pill">
-          <span>Primary Mode</span>
-          <strong>Cinematic informational site</strong>
-        </div>
-        <div class="hero-stat glass-pill">
-          <span>Flagship Product</span>
-          <strong>IronClaw Security</strong>
-        </div>
-        <div class="hero-stat glass-pill">
-          <span>Deployment</span>
-          <strong>Static site on Cloudflare Pages</strong>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-intro" id="mission-preview">
-      <div class="container split-layout">
-        <div class="section-heading" data-reveal>
-          <p class="section-kicker">Mission</p>
-          <h2 class="section-title">
-            A hopeful, high-trust public front page for an ambitious long-term operating model.
-          </h2>
-        </div>
-
-        <div class="section-body" data-reveal>
-          <p>
-            The homepage should explain the umbrella mission quickly, present the product
-            ecosystem clearly, and show how commercial momentum can support broader community
-            outcomes over time.
-          </p>
-          <p>
-            This first draft keeps the copy editable while locking in the premium structure,
-            cinematic flow, and future-facing visual system for the full site.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section ecosystem-preview" id="ecosystem">
-      <div class="container">
-        <div class="split-layout split-layout-top">
-          <div class="section-heading" data-reveal>
-            <p class="section-kicker">Ecosystem</p>
-            <h2 class="section-title">
-              Products and initiatives that connect into the larger vision.
-            </h2>
-          </div>
-
-          <div class="section-body" data-reveal>
-            <p>
-              These are concise first-draft summaries for the homepage. Each one links to a
-              future deep page with more detail later.
-            </p>
-          </div>
-        </div>
-
-        <div class="ecosystem-grid">
-          <article class="glass-card product-card" data-reveal data-tilt>
-            <div class="product-orb orb-gold" aria-hidden="true"></div>
-            <p class="product-kicker">Security</p>
-            <h3>IronClaw Security</h3>
-            <p>
-              AI-native security infrastructure designed to protect agents, tools, prompts,
-              workflows, and runtime trust boundaries.
-            </p>
-            <a href="./projects/ironclaw-security.html">Open future page</a>
-          </article>
-
-          <article class="glass-card product-card" data-reveal data-tilt>
-            <div class="product-orb orb-blue" aria-hidden="true"></div>
-            <p class="product-kicker">Language</p>
-            <h3>Langy</h3>
-            <p>
-              A language-learning product built for lasting understanding, clarity, and real
-              comprehension over time.
-            </p>
-            <a href="./projects/langy.html">Open future page</a>
-          </article>
-
-          <article class="glass-card product-card" data-reveal data-tilt>
-            <div class="product-orb orb-plat" aria-hidden="true"></div>
-            <p class="product-kicker">Cognition</p>
-            <h3>Brain Games</h3>
-            <p>
-              Cognitive development experiences designed to strengthen focus, patterning, and
-              repeatable mental sharpness.
-            </p>
-            <a href="./projects/brain-games.html">Open future page</a>
-          </article>
-
-          <article class="glass-card product-card" data-reveal data-tilt>
-            <div class="product-orb orb-gold" aria-hidden="true"></div>
-            <p class="product-kicker">Care Network</p>
-            <h3>Animal Fosters</h3>
-            <p>
-              A support concept for foster systems, care operations, and mission-aligned
-              service capacity.
-            </p>
-            <a href="./projects/animal-fosters.html">Open future page</a>
-          </article>
-
-          <article class="glass-card product-card" data-reveal data-tilt>
-            <div class="product-orb orb-blue" aria-hidden="true"></div>
-            <p class="product-kicker">Relocation</p>
-            <h3>Taylor Real Estate</h3>
-            <p>
-              Property, land, and relocation support aligned with community planning and future
-              settlement pathways.
-            </p>
-            <a href="./projects/taylor-real-estate.html">Open future page</a>
-          </article>
-
-          <article class="glass-card product-card" data-reveal data-tilt>
-            <div class="product-orb orb-plat" aria-hidden="true"></div>
-            <p class="product-kicker">Transition Support</p>
-            <h3>Taylor Agents</h3>
-            <p>
-              International support pathways for logistics, movement, and lawful transition into
-              aligned destinations.
-            </p>
-            <a href="./projects/taylor-agents.html">Open future page</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section community-preview" id="communities">
-      <div class="container community-shell">
-        <div class="community-media glass-card" data-reveal>
-          <video
-            class="section-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            poster="./assets/images/community-poster.jpg"
-          >
-            <source src="./assets/video/community-loop.webm" type="video/webm" />
-            <source src="./assets/video/community-loop.mp4" type="video/mp4" />
-          </video>
-
-          <div class="community-video-fallback">
-            <div class="fallback-note">
-              <span>Community section video placeholder</span>
-              <code>./assets/video/community-loop.mp4</code>
-            </div>
-          </div>
-
-          <div class="community-shade"></div>
-
-          <div class="community-caption">
-            <p class="section-kicker">Community Vision</p>
-            <h3>Land, family life, infrastructure, resilience, and long-range quality of life.</h3>
-          </div>
-        </div>
-
-        <div class="community-copy" data-reveal>
-          <p class="section-kicker">Communities</p>
-          <h2 class="section-title">
-            Translate digital momentum into real places that people can actually build a future in.
-          </h2>
-          <p>
-            This section previews land development, off-grid systems, safety, food, education,
-            and the long-term vision for stable and thoughtfully designed communities.
-          </p>
-
-          <div class="community-points">
-            <article class="glass-card info-slab">
-              <strong>Land and planning</strong>
-              <span>Acquire and develop deliberately over time.</span>
-            </article>
-            <article class="glass-card info-slab">
-              <strong>Core systems</strong>
-              <span>Food, water, energy, security, and connectivity.</span>
-            </article>
-            <article class="glass-card info-slab">
-              <strong>Family pathways</strong>
-              <span>Support relocation, stability, and long-horizon living.</span>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section roadmap-preview" id="roadmap">
-      <canvas id="roadmap-canvas" class="roadmap-canvas" aria-hidden="true"></canvas>
-
-      <div class="container roadmap-shell">
-        <div class="split-layout split-layout-top">
-          <div class="section-heading" data-reveal>
-            <p class="section-kicker">Roadmap</p>
-            <h2 class="section-title">
-              A flagship interactive roadmap that connects commercial growth to community capacity.
-            </h2>
-          </div>
-
-          <div class="section-body" data-reveal>
-            <p>
-              This homepage version introduces the sequence. The dedicated roadmap page can later
-              expand each phase into a deeper interactive experience.
-            </p>
-          </div>
-        </div>
-
-        <div class="roadmap-list">
-          <article class="glass-card roadmap-item" data-reveal>
-            <span class="road-index">01</span>
-            <div>
-              <h3>Build strong revenue-generating businesses.</h3>
-              <p>
-                Launch and grow products such as IronClaw Security, language systems, and other
-                aligned ventures that create durable value.
-              </p>
-            </div>
-          </article>
-
-          <article class="glass-card roadmap-item" data-reveal>
-            <span class="road-index">02</span>
-            <div>
-              <h3>Establish The Enlightenism Organization.</h3>
-              <p>
-                Build the broader mission platform and define the public-facing structure clearly.
-              </p>
-            </div>
-          </article>
-
-          <article class="glass-card roadmap-item" data-reveal>
-            <span class="road-index">03</span>
-            <div>
-              <h3>Increase support capacity through commercial success.</h3>
-              <p>
-                Use business performance to expand the organization’s ability to help more people
-                over time.
-              </p>
-            </div>
-          </article>
-
-          <article class="glass-card roadmap-item" data-reveal>
-            <span class="road-index">04</span>
-            <div>
-              <h3>Reinvest into land development and physical infrastructure.</h3>
-              <p>
-                Build the practical foundations required for affordable, resilient, self-sustaining
-                communities.
-              </p>
-            </div>
-          </article>
-
-          <article class="glass-card roadmap-item" data-reveal>
-            <span class="road-index">05</span>
-            <div>
-              <h3>Expand into additional regions and countries over time.</h3>
-              <p>
-                Grow carefully so more families can choose from multiple destinations and future
-                community pathways.
-              </p>
-            </div>
-          </article>
-
-          <article class="glass-card roadmap-item" data-reveal>
-            <span class="road-index">06</span>
-            <div>
-              <h3>Build and share the knowledge layer.</h3>
-              <p>
-                Teach practical life systems, health, technology, and broader educational material
-                that helps members strengthen their lives.
-              </p>
-            </div>
-          </article>
-
-          <article class="glass-card roadmap-item" data-reveal>
-            <span class="road-index">07</span>
-            <div>
-              <h3>Develop long-range governance and belief-system architecture.</h3>
-              <p>
-                Reserve this as a future-stage concept that requires separate governance, legal,
-                and public-positioning review before publication.
-              </p>
-            </div>
-          </article>
-
-          <article class="glass-card roadmap-item" data-reveal>
-            <span class="road-index">08</span>
-            <div>
-              <h3>Keep growing and compounding the system for future generations.</h3>
-              <p>
-                Expand infrastructure, capacity, and long-term support so the overall mission can
-                continue helping more people over time.
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <div class="roadmap-actions" data-reveal>
-          <a class="button button-primary" href="./roadmap.html">Open full roadmap page</a>
-          <a class="button button-secondary" href="./communities.html">Explore communities</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact-preview" id="contact">
-      <div class="container">
-        <div class="glass-card contact-panel" data-reveal>
-          <div class="contact-copy">
-            <p class="section-kicker">Contact / Interest</p>
-            <h2 class="section-title">
-              Build the first trust layer for families, partners, builders, and aligned supporters.
-            </h2>
-            <p>
-              This homepage CTA block can later connect to a real intake system, donor form,
-              partner inquiry flow, or mission-aligned waitlist.
-            </p>
-          </div>
-
-          <div class="contact-actions">
-            <a class="button button-primary" href="./contact.html">Open future contact page</a>
-            <a class="button button-secondary" href="mailto:hello@moving-forward.ca">Placeholder email</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-shell">
-      <div class="footer-brand">
-        <a class="brand footer-brand-link" href="./index.html">
+  <div class="site-shell">
+    <header class="header" id="site-header">
+      <div class="container nav">
+        <a class="brand" href="./index.html" aria-label="The Enlightenism Organization home">
           <span class="brand-mark" aria-hidden="true">
-            <span class="brand-core"></span>
-            <span class="brand-ring brand-ring-a"></span>
-            <span class="brand-ring brand-ring-b"></span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="24" cy="24" r="16"></circle>
+              <path d="M24 8v32"></path>
+              <path d="M12 24h24"></path>
+              <path d="M15 15l18 18"></path>
+            </svg>
           </span>
-          <span class="brand-text">
-            <strong>The Enlightenism Organization</strong>
-            <em>Products, communities, roadmap, and long-range future systems</em>
+          <span class="brand-copy">
+            <strong class="brand-title">The Enlightenism Organization</strong>
           </span>
         </a>
-        <p>
-          Premium public-facing brand site for the umbrella mission and its growing ecosystem.
-        </p>
+
+        <button class="menu-toggle interactive" type="button" aria-expanded="false" aria-controls="nav-links" data-menu-toggle>
+          <span class="sr-only">Toggle navigation</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+
+        <nav class="nav-links" id="nav-links" aria-label="Primary">
+          <a class="interactive" href="./index.html">Home</a>
+          <a class="interactive" href="./services.html">Services</a>
+          <a class="interactive" href="./programs.html">Program Development</a>
+          <a class="interactive" href="./support.html">Help &amp; Support</a>
+          <button class="theme-toggle interactive" type="button" data-theme-toggle aria-label="Switch theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"></path>
+            </svg>
+          </button>
+        </nav>
       </div>
+    </header>
 
-      <div class="footer-links">
-        <div>
-          <h3>Pages</h3>
-          <ul role="list">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./mission.html">Mission</a></li>
-            <li><a href="./ecosystem.html">Ecosystem</a></li>
-            <li><a href="./communities.html">Communities</a></li>
-            <li><a href="./roadmap.html">Roadmap</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-          </ul>
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero-video-fallback" aria-hidden="true"></div>
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+          <!-- Replace src with your actual hero background video file under assets/videos/ -->
+          <source src="./assets/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
+        <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+
+        <div class="wide-container hero-layout">
+          <div class="hero-copy reveal">
+            <h1><span class="hero-title">Building resilient off-grid farm oriented communities for families that want a better future.</span></h1>
+            <p>
+              The Enlightenism Organization is a non-profit umbrella corporation for revenue-generating businesses, relocation services, and off-grid community development, designed to help people move out of fragile living situations.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary interactive" href="./programs.html">Explore programs</a>
+              <a class="btn btn-secondary interactive" href="#roadmap">View the roadmap</a>
+            </div>
+            <div class="hero-meta" aria-label="Key focus areas">
+              <article class="meta-card">
+                <span>Product layer</span>
+                <strong>IronClaw Security active</strong>
+              </article>
+              <article class="meta-card">
+                <span>Mission layer</span>
+                <strong>Non-profit and community build</strong>
+              </article>
+            </div>
+          </div>
+
+          <aside class="hero-panel reveal" aria-label="Signals">
+            <div class="hero-panel-head">
+              <strong>Mission signals</strong>
+              <span class="status-pill">Live build</span>
+            </div>
+            <div class="signal-grid">
+              <article class="signal-card">
+                <span class="signal-dot" aria-hidden="true"></span>
+                <div class="signal-copy">
+                  <strong>Revenue engines</strong>
+                  <span>IronClaw and future apps funding the mission.</span>
+                </div>
+                <span class="signal-value">Layer 01</span>
+              </article>
+              <article class="signal-card">
+                <span class="signal-dot" aria-hidden="true"></span>
+                <div class="signal-copy">
+                  <strong>Relocation support</strong>
+                  <span>Services that help people reach better countries.</span>
+                </div>
+                <span class="signal-value">Layer 02</span>
+              </article>
+              <article class="signal-card">
+                <span class="signal-dot" aria-hidden="true"></span>
+                <div class="signal-copy">
+                  <strong>Off-grid land</strong>
+                  <span>Affordable communities with farming and resilience.</span>
+                </div>
+                <span class="signal-value">Layer 03</span>
+              </article>
+            </div>
+          </aside>
         </div>
+      </section>
 
-        <div>
-          <h3>Projects</h3>
-          <ul role="list">
-            <li><a href="./projects/ironclaw-security.html">IronClaw Security</a></li>
-            <li><a href="./projects/langy.html">Langy</a></li>
-            <li><a href="./projects/brain-games.html">Brain Games</a></li>
-            <li><a href="./projects/animal-fosters.html">Animal Fosters</a></li>
-            <li><a href="./projects/taylor-real-estate.html">Taylor Real Estate</a></li>
-            <li><a href="./projects/taylor-agents.html">Taylor Agents</a></li>
-          </ul>
+      <section class="reveal" aria-labelledby="ecosystem-heading">
+        <div class="wide-container">
+          <div class="section-head">
+            <span class="section-kicker">Ecosystem overview</span>
+            <h2 id="ecosystem-heading">Businesses, services, and communities orbiting one mission nucleus.</h2>
+            <p>
+              Showing new members a clear map of how IronClaw Security, Taylor Services, member support, and off-grid land development all connect into The Enlightenism Organization core mission.
+            </p>
+          </div>
+
+          <div class="ecosystem-layout">
+            <div class="glass-panel ecosystem-map">
+              <div class="node-core">
+                <svg viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="line-gold" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="rgba(212,175,55,0.15)" />
+                      <stop offset="100%" stop-color="rgba(135,206,235,0.28)" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M180 150 C300 220 340 260 500 350" stroke="url(#line-gold)" stroke-width="2" fill="none" stroke-dasharray="10 10" />
+                  <path d="M820 200 C690 250 650 295 500 350" stroke="url(#line-gold)" stroke-width="2" fill="none" stroke-dasharray="10 10" />
+                  <path d="M220 525 C340 470 360 435 500 350" stroke="url(#line-gold)" stroke-width="2" fill="none" stroke-dasharray="10 10" />
+                  <path d="M780 580 C650 500 610 455 500 350" stroke="url(#line-gold)" stroke-width="2" fill="none" stroke-dasharray="10 10" />
+                </svg>
+
+                <article class="orbit-node node-a">
+                  <strong>IronClaw Security</strong>
+                  <span>AI security brain protecting users from prompt injection attacks.</span>
+                </article>
+                <article class="orbit-node node-b">
+                  <strong>Taylor Services</strong>
+                  <span>Immigration, real estate, and land development pathways in Jalisco and beyond.</span>
+                </article>
+                <article class="orbit-node node-c">
+                  <strong>Member support</strong>
+                  <span>Membership intake, skills mapping, and relocation assistance for families.</span>
+                </article>
+                <article class="orbit-node node-d">
+                  <strong>Off-grid communities</strong>
+                  <span>Farm-oriented, self-sustaining land developments in the strongest countries.</span>
+                </article>
+
+                <div class="core-center" aria-label="The Enlightenism Organization mission nucleus">
+                  <div>
+                    <strong>The Enlightenism Organization</strong>
+                    <span>Mission nucleus</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
+      <section id="roadmap" class="reveal" aria-labelledby="roadmap-heading">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-kicker">Roadmap</span>
+            <h2 id="roadmap-heading">Eight steps from revenue to global off-grid communities.</h2>
+            <p>
+              The roadmap: how every project and service contributes to one long-term build path.
+            </p>
+          </div>
+
+          <div class="roadmap-wrap">
+            <article class="roadmap-card interactive">
+              <div class="roadmap-number">01</div>
+              <div class="roadmap-copy">
+                <strong>Build revenue-generating businesses.</strong>
+                <p>Launch IronClaw Security and other apps that create the capital base needed to fund everything else.</p>
+              </div>
+            </article>
+            <article class="roadmap-card interactive">
+              <div class="roadmap-number">02</div>
+              <div class="roadmap-copy">
+                <strong>Form The Enlightenism Organization foundation.</strong>
+                <p>Set up the non-profit structure that will help people relocate into off-grid communities in the best countries.</p>
+              </div>
+            </article>
+            <article class="roadmap-card interactive">
+              <div class="roadmap-number">03</div>
+              <div class="roadmap-copy">
+                <strong>Route profits into direct support.</strong>
+                <p>Use business profits to donate into the foundation so more families can be helped over time.</p>
+              </div>
+            </article>
+            <article class="roadmap-card interactive">
+              <div class="roadmap-number">04</div>
+              <div class="roadmap-copy">
+                <strong>Reinvest into land development.</strong>
+                <p>Acquire and build off-grid, farm-oriented communities so there are actual places available for people to live.</p>
+              </div>
+            </article>
+            <article class="roadmap-card interactive">
+              <div class="roadmap-number">05</div>
+              <div class="roadmap-copy">
+                <strong>Expand into the strongest countries.</strong>
+                <p>Grow the model into the best countries around the world so members can choose where they want to live.</p>
+              </div>
+            </article>
+            <article class="roadmap-card interactive">
+              <div class="roadmap-number">06</div>
+              <div class="roadmap-copy">
+                <strong>Share real-world knowledge.</strong>
+                <p>Educate members on health, geopolitics, and how the world is really structured so they can protect and improve their lives.</p>
+              </div>
+            </article>
+            <article class="roadmap-card interactive">
+              <div class="roadmap-number">07</div>
+              <div class="roadmap-copy">
+                <strong>Establish member protections.</strong>
+                <p>When the member base is strong enough, file for a registered belief system to help protect members from future government mandates and overreach using religious exemptions.</p>
+              </div>
+            </article>
+            <article class="roadmap-card interactive">
+              <div class="roadmap-number">08</div>
+              <div class="roadmap-copy">
+                <strong>Keep building the legacy.</strong>
+                <p>Continue expanding, refining, and funding the ecosystem so it can help as many families as possible for as long as possible.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="reveal" aria-labelledby="status-heading">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-kicker">Current status</span>
+            <h2 id="status-heading">Live product, service pillars, and launch pipeline.</h2>
+            <p>
+              This section is here for you and future visitors to see what is live, what is coming, and how the main site will route into it.
+            </p>
+          </div>
+
+          <div class="metrics-band">
+            <article class="metric-panel">
+              <span>Live product</span>
+              <strong data-count="1">1</strong>
+              <p>IronClaw Security is available.</p>
+            </article>
+            <article class="metric-panel">
+              <span>Service pillars</span>
+              <strong data-count="3">3</strong>
+              <p>Taylor Immigration Services, Taylor Real Estate, and Taylor Land Development form the services page.</p>
+            </article>
+            <article class="metric-panel">
+              <span>Upcoming programs</span>
+              <strong data-count="4">4</strong>
+              <p>Langy Language Learning, Animal Fosterz, Awake Together, and Brain Games are staged for launch.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
         <div>
-          <h3>Build notes</h3>
-          <ul role="list">
-            <li><a href="./assets/video/hero-main.mp4">Hero video path</a></li>
-            <li><a href="./assets/video/community-loop.mp4">Community video path</a></li>
-            <li><a href="./roadmap.html">Interactive roadmap expansion</a></li>
-            <li><a href="./ecosystem.html">Ecosystem deep view</a></li>
-          </ul>
+          <div class="brand-copy">
+            <strong class="brand-title">The Enlightenism Organization</strong>
+          </div>
+          <div class="footer-links">
+            <a class="interactive" href="./privacy.html">Privacy Policy</a>
+            <a class="interactive" href="./terms.html">Terms of Use</a>
+            <a class="interactive" href="./services.html">Services</a>
+            <a class="interactive" href="./programs.html">Program Development</a>
+            <a class="interactive" href="./support.html">Help &amp; Support</a>
+          </div>
+        </div>
+        <div class="footer-branding">
+          <span>The Enlightenism Organization TM © 2026</span>
+          <span>Powered By Universal Rejuvenation Inc.</span>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
-  <script type="module" src="./main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js" defer></script>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themeButton = document.querySelector('[data-theme-toggle]');
+      const menuButton = document.querySelector('[data-menu-toggle]');
+      const navLinks = document.getElementById('nav-links');
+      const header = document.getElementById('site-header');
+      const cursor = document.querySelector('.cursor');
+      const ring = document.querySelector('.cursor-ring');
+      const interactiveItems = document.querySelectorAll('.interactive');
+      const counters = document.querySelectorAll('[data-count]');
+      const mediaDark = window.matchMedia('(prefers-color-scheme: dark)');
+      let currentTheme = mediaDark.matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', currentTheme);
+
+      const setThemeIcon = (theme) => {
+        if (!themeButton) return;
+        themeButton.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        themeButton.innerHTML = theme === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"></path></svg>';
+      };
+      setThemeIcon(currentTheme);
+
+      themeButton?.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', currentTheme);
+        setThemeIcon(currentTheme);
+      });
+
+      menuButton?.addEventListener('click', () => {
+        const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', String(!expanded));
+        navLinks?.classList.toggle('open');
+      });
+
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 12);
+      }, { passive: true });
+
+      if (window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.body.classList.add('cursor-enabled');
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let ringX = mouseX;
+        let ringY = mouseY;
+
+        const moveCursor = (event) => {
+          mouseX = event.clientX;
+          mouseY = event.clientY;
+          cursor.style.transform = `translate(${mouseX - 5}px, ${mouseY - 5}px)`;
+        };
+
+        const animateRing = () => {
+          ringX += (mouseX - ringX) * 0.14;
+          ringY += (mouseY - ringY) * 0.14;
+          ring.style.transform = `translate(${ringX}px, ${ringY}px)`;
+          requestAnimationFrame(animateRing);
+        };
+
+        window.addEventListener('mousemove', moveCursor, { passive: true });
+        window.addEventListener('mousedown', () => document.body.classList.add('cursor-hover'));
+        window.addEventListener('mouseup', () => document.body.classList.remove('cursor-hover'));
+        interactiveItems.forEach((item) => {
+          item.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+          item.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+        animateRing();
+      }
+
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const end = Number(el.getAttribute('data-count'));
+          const duration = 1100;
+          const startTime = performance.now();
+          const step = (now) => {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = String(Math.floor(eased * end));
+            if (progress < 1) requestAnimationFrame(step);
+            else el.textContent = String(end);
+          };
+          requestAnimationFrame(step);
+          counterObserver.unobserve(el);
+        });
+      }, { threshold: 0.45 });
+      counters.forEach((counter) => counterObserver.observe(counter));
+
+      const buildHeroScene = () => {
+        const canvas = document.getElementById('hero-canvas');
+        if (!canvas || !window.THREE || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8));
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
+        camera.position.set(0, 0, 14);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        const pointsGeometry = new THREE.BufferGeometry();
+        const pointCount = 1400;
+        const positions = new Float32Array(pointCount * 3);
+        const colors = new Float32Array(pointCount * 3);
+        const palette = [
+          new THREE.Color('#d4af37'),
+          new THREE.Color('#e5e4e2'),
+          new THREE.Color('#87ceeb')
+        ];
+
+        for (let i = 0; i < pointCount; i++) {
+          const radius = 4 + Math.random() * 4.8;
+          const theta = Math.random() * Math.PI * 2;
+          const phi = Math.acos((Math.random() * 2) - 1);
+          const x = radius * Math.sin(phi) * Math.cos(theta);
+          const y = radius * Math.sin(phi) * Math.sin(theta) * 0.65;
+          const z = radius * Math.cos(phi);
+          positions[i * 3] = x;
+          positions[i * 3 + 1] = y;
+          positions[i * 3 + 2] = z;
+          const color = palette[i % palette.length];
+          colors[i * 3] = color.r;
+          colors[i * 3 + 1] = color.g;
+          colors[i * 3 + 2] = color.b;
+        }
+
+        pointsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        pointsGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+        const pointsMaterial = new THREE.PointsMaterial({
+          size: 0.07,
+          vertexColors: true,
+          transparent: true,
+          opacity: 0.72,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false
+        });
+        const points = new THREE.Points(pointsGeometry, pointsMaterial);
+        group.add(points);
+
+        const wireGeometry = new THREE.IcosahedronGeometry(3.35, 1);
+        const wireMaterial = new THREE.MeshBasicMaterial({
+          color: '#d9dbe1',
+          wireframe: true,
+          transparent: true,
+          opacity: 0.12
+        });
+        const wireMesh = new THREE.Mesh(wireGeometry, wireMaterial);
+        group.add(wireMesh);
+
+        const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambient);
+
+        const resize = () => {
+          const { clientWidth, clientHeight } = canvas;
+          if (!clientWidth || !clientHeight) return;
+          renderer.setSize(clientWidth, clientHeight, false);
+          camera.aspect = clientWidth / clientHeight;
+          camera.updateProjectionMatrix();
+        };
+        resize();
+        window.addEventListener('resize', resize);
+
+        let pointerX = 0;
+        let pointerY = 0;
+        window.addEventListener('pointermove', (event) => {
+          pointerX = (event.clientX / window.innerWidth) * 2 - 1;
+          pointerY = (event.clientY / window.innerHeight) * 2 - 1;
+        }, { passive: true });
+
+        const clock = new THREE.Clock();
+        const animate = () => {
+          const elapsed = clock.getElapsedTime();
+          group.rotation.y = elapsed * 0.08 + pointerX * 0.18;
+          group.rotation.x = Math.sin(elapsed * 0.22) * 0.08 + pointerY * 0.08;
+          points.rotation.x = elapsed * 0.02;
+          renderer.render(scene, camera);
+          requestAnimationFrame(animate);
+        };
+        animate();
+      };
+
+      window.addEventListener('load', buildHeroScene, { once: true });
+    })();
+  </script>
 </body>
 </html>

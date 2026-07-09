@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Enlightenism Organization | Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for The Enlightenism Organization, explaining how we collect, use, protect, and share personal information across our charity and related businesses." />
+  <meta name="theme-color" content="#05070d" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.9rem);
+
+      --space-1:  0.25rem;
+      --space-2:  0.5rem;
+      --space-3:  0.75rem;
+      --space-4:  1rem;
+      --space-5:  1.25rem;
+      --space-6:  1.5rem;
+      --space-8:  2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      --font-display: 'Zodiak', Georgia, serif;
+      --font-body: 'Satoshi', Inter, sans-serif;
+
+      --color-bg: #05070d;
+      --color-surface: rgba(12, 17, 28, 0.88);
+      --color-surface-2: rgba(17, 24, 39, 0.96);
+      --color-border: rgba(255, 255, 255, 0.14);
+      --color-divider: rgba(255, 255, 255, 0.09);
+      --color-text: #ffffff;
+      --color-text-muted: rgba(255, 255, 255, 0.82);
+      --color-text-faint: rgba(255, 255, 255, 0.55);
+
+      --color-gold-1: #f5d87a;
+      --color-gold-2: #d4af37;
+      --color-plat-2: #e5e4e2;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
+      --shadow-md: 0 18px 38px rgba(0, 0, 0, 0.28);
+      --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.42);
+
+      --radius-sm: 0.375rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1.2rem;
+      --radius-xl: 1.8rem;
+      --radius-full: 999px;
+
+      --content-default: 1200px;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #05070d;
+      --color-surface: rgba(12, 17, 28, 0.88);
+      --color-surface-2: rgba(17, 24, 39, 0.96);
+      --color-text: #ffffff;
+      --color-text-muted: rgba(255, 255, 255, 0.82);
+      --color-text-faint: rgba(255, 255, 255, 0.55);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      text-size-adjust: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: var(--color-bg);
+    }
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-text);
+      overflow-x: clip;
+      background: var(--color-bg);
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; cursor: pointer; background: none; border: none; }
+
+    .container {
+      width: min(100% - 2rem, var(--content-default));
+      margin-inline: auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(180deg, rgba(5, 7, 13, 0.9), rgba(5, 7, 13, 0.5));
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav {
+      min-height: 5.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-height: 44px;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(135,206,235,0.08));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 20px rgba(0,0,0,0.22);
+    }
+    .brand-mark svg { width: 22px; height: 22px; color: var(--color-text); }
+    .brand-title {
+      font-size: var(--text-sm);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background: linear-gradient(110deg, var(--color-gold-1), var(--color-gold-2), var(--color-plat-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      min-height: 44px;
+      padding: 0.7rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      border: 1px solid transparent;
+      transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive);
+    }
+    .nav-links a:hover {
+      color: var(--color-text);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    main {
+      padding-block: clamp(var(--space-12), 7vw, var(--space-20));
+    }
+
+    .policy-shell {
+      border-radius: var(--radius-xl);
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+      padding: clamp(var(--space-8), 4vw, var(--space-12));
+    }
+    .policy-title {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-4);
+    }
+    .policy-meta {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-6);
+    }
+
+    .policy-section {
+      margin-bottom: var(--space-6);
+      border-top: 1px solid var(--color-divider);
+      padding-top: var(--space-4);
+    }
+    .policy-section:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+    .policy-section h2 {
+      font-size: var(--text-lg);
+      margin-bottom: 0.5rem;
+    }
+    .policy-section p,
+    .policy-section ul {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    .policy-section ul {
+      margin-top: 0.6rem;
+      padding-left: 1.2rem;
+      list-style: disc;
+    }
+    .policy-section li {
+      margin-bottom: 0.4rem;
+    }
+
+    .footer {
+      padding-block: 2rem 2.4rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      margin-top: var(--space-12);
+    }
+    .footer-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.9rem;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+    .footer-links a:hover { color: var(--color-text); }
+    .footer-branding {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: transparent;
+      background: linear-gradient(110deg, var(--color-gold-1), var(--color-plat-2), var(--color-gold-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    @media (max-width: 900px) {
+      .policy-shell {
+        padding: var(--space-8) var(--space-6);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-branding {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="16"></circle>
+            <path d="M24 8v32"></path>
+            <path d="M12 24h24"></path>
+            <path d="M15 15l18 18"></path>
+          </svg>
+        </span>
+        <span class="brand-title">The Enlightenism Organization</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./services.html">Services</a>
+        <a href="./programs.html">Program Development</a>
+        <a href="./support.html">Help &amp; Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <article class="policy-shell">
+        <h1 class="policy-title">Privacy Policy</h1>
+        <div class="policy-meta">
+          Effective date: 09 July 2026 &mdash; last updated periodically as our systems and laws evolve.
+        </div>
+
+        <section class="policy-section">
+          <h2>1. Who we are</h2>
+          <p>
+            This Privacy Policy explains how The Enlightenism Organization, including its related programs and businesses such as IronClaw Security, Taylor Immigration Services, Taylor Real Estate, Taylor Land Development, and future applications, collects, uses, shares, and protects personal information when you visit our websites or use our services.
+          </p>
+          <p>
+            References to “we”, “us”, and “our” in this Policy include The Enlightenism Organization as the charitable foundation and Universal Rejuvenation Inc. as the umbrella corporation supporting the related businesses.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>2. Scope of this Policy</h2>
+          <p>
+            This Policy applies to all websites and digital properties operated by or on behalf of The Enlightenism Organization and Universal Rejuvenation Inc., including landing pages, subdomains, membership forms, donation pages, and application interfaces connected to this ecosystem.
+          </p>
+          <p>
+            This Policy does not apply to independent third-party websites or services, even if they are linked from our pages; those sites have their own privacy practices.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>3. Information we collect</h2>
+          <p>We may collect the following categories of information when you interact with our websites and services:</p>
+          <ul>
+            <li><strong>Contact details:</strong> name, email address, and other information you provide through membership forms, contact forms, or support requests.</li>
+            <li><strong>Professional and skills information:</strong> details about your profession, skills, and experience that you voluntarily provide so we can match you with projects or communities.</li>
+            <li><strong>Donation and transaction information:</strong> limited payment-related details processed through third-party payment providers such as Stripe (we do not store full card numbers on our systems).</li>
+            <li><strong>Technical and usage data:</strong> IP address, browser type, device information, pages visited, time spent, and interactions collected through server logs, security tools, and optional analytics.</li>
+            <li><strong>Communications:</strong> messages you send to us by email or through forms, and our responses.</li>
+          </ul>
+        </section>
+
+        <section class="policy-section">
+          <h2>4. How we use information</h2>
+          <p>We use personal information for purposes including:</p>
+          <ul>
+            <li>Operating our websites, membership systems, and donation flows.</li>
+            <li>Reviewing membership applications and skills to match people with suitable projects or communities.</li>
+            <li>Processing donations and providing confirmations, receipts, and related communications.</li>
+            <li>Responding to questions and support requests.</li>
+            <li>Improving our sites, services, and security systems over time.</li>
+            <li>Complying with legal, regulatory, tax, and reporting obligations for charities and businesses.</li>
+          </ul>
+          <p>
+            We may also use aggregated and anonymized information to understand general patterns and improve our planning; this type of information does not identify individuals.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>5. Legal bases and consent</h2>
+          <p>
+            Depending on your location and applicable laws, we may process personal information based on one or more legal bases, including your consent, the necessity to perform a contract or pre-contractual steps (such as membership review or service delivery), compliance with legal obligations, and our legitimate interests in running and protecting our organization and communities.
+          </p>
+          <p>
+            Where we rely on consent, you may withdraw it at any time by contacting us. Withdrawal of consent may limit our ability to provide certain services to you.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>6. Cookies and similar technologies</h2>
+          <p>
+            Our websites may use cookies and similar technologies to remember preferences, maintain security sessions, and understand how people use our pages. You can usually control cookies through your browser settings, but disabling certain cookies may affect site functionality or experience.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>7. Data sharing and third-party services</h2>
+          <p>
+            We may share personal information with carefully selected third-party service providers who help us operate our systems, such as hosting providers, analytics services, email infrastructure, Formspree (for handling form submissions), and Stripe or other payment processors (for handling donations and payments).
+          </p>
+          <p>
+            These providers are only allowed to use personal information as needed to provide their services to us and must handle data in a secure and lawful manner. We may also share information when required by law, regulation, government request, or court order.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>8. Data security</h2>
+          <p>
+            We use technical and organizational measures designed to protect personal information against unauthorized access, loss, misuse, or alteration, including access controls, encryption where appropriate, security monitoring, and regular system maintenance.
+          </p>
+          <p>
+            No system can be guaranteed to be perfectly secure, but we take reasonable steps to reduce risk and respond quickly if we become aware of potential issues.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>9. Data retention</h2>
+          <p>
+            We retain personal information only as long as reasonably necessary to fulfill the purposes described in this Policy, comply with legal and tax requirements, maintain records of donations and memberships, resolve disputes, and enforce our agreements.
+          </p>
+          <p>
+            When information is no longer needed, we will delete or anonymize it in a manner consistent with applicable law and our internal policies.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>10. Your rights</h2>
+          <p>
+            Depending on your location and applicable law, you may have rights over your personal information, such as the right to access, correct, update, or delete certain data, object to or restrict certain processing, and receive a copy of information in a portable format.
+          </p>
+          <p>
+            To exercise these rights, contact us using the details below. We may need to verify your identity before fulfilling certain requests, and some rights may be limited where the law allows or requires us to retain data.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>11. Children’s privacy</h2>
+          <p>
+            Our websites and services are not directed to children under 16, and we do not knowingly collect personal information from children under that age. If you believe a child has provided us with personal information, please contact us so we can investigate and, where appropriate, delete the information.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>12. International data transfers</h2>
+          <p>
+            Our infrastructure and service providers may operate in multiple countries. This means that personal information may be stored or processed outside your country of residence, in places with different data protection rules.
+          </p>
+          <p>
+            Where required by law, we implement safeguards designed to protect personal information when it is transferred internationally.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>13. Changes to this Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time to reflect changes in our activities, technologies, or legal requirements. When we make material changes, we will update the effective date above and may provide additional notice where appropriate.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>14. Contact us</h2>
+          <p>
+            If you have questions about this Privacy Policy or how we handle personal information, or if you wish to exercise your rights, you can contact us at:
+          </p>
+          <ul>
+            <li><strong>Email:</strong> privacy@enlightenism.org (placeholder &mdash; replace with your actual address).</li>
+            <li><strong>Postal address:</strong> [Insert official mailing address for The Enlightenism Organization].</li>
+          </ul>
+        </section>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <span class="brand-title">The Enlightenism Organization</span>
+        <div class="footer-links">
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="./terms.html">Terms of Use</a>
+          <a href="./services.html">Services</a>
+          <a href="./programs.html">Program Development</a>
+          <a href="./support.html">Help &amp; Support</a>
+        </div>
+      </div>
+      <div class="footer-branding">
+        <span>The Enlightenism Organization TM © 2026</span>
+        <span>Powered By Universal Rejuvenation Inc.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
