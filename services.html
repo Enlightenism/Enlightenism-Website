@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet" />
 
-  <!-- If you move styles into css/style.css later, keep these tokens consistent -->
+  <!-- Page styles (can be migrated into css/style.css later) -->
   <style>
     :root, [data-theme="light"] {
       --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
@@ -255,6 +255,7 @@
       padding: 0;
     }
 
+    /* Fullscreen video background + overlay */
     .video-section {
       position: relative;
       min-height: 100vh;
@@ -266,7 +267,7 @@
     .video-background-wrapper {
       position: fixed;
       inset: 0;
-      z-index: -2;
+      z-index: -10;
       overflow: hidden;
     }
     .video-background-wrapper video {
@@ -283,11 +284,12 @@
     .video-overlay {
       position: fixed;
       inset: 0;
-      z-index: -1;
+      z-index: -9;
       background:
         linear-gradient(180deg, rgba(5,10,20,0.86), rgba(5,10,20,0.96)),
         radial-gradient(circle at 20% 0%, rgba(135,206,235,0.18), transparent 40%),
         radial-gradient(circle at 80% 100%, rgba(212,175,55,0.2), transparent 40%);
+      pointer-events: none;
     }
 
     .services-shell {
@@ -339,8 +341,9 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 0% 0%, rgba(135,206,235,0.18), transparent 45%),
-                  radial-gradient(circle at 100% 100%, rgba(212,175,55,0.18), transparent 45%);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(135,206,235,0.18), transparent 45%),
+        radial-gradient(circle at 100% 100%, rgba(212,175,55,0.18), transparent 45%);
       pointer-events: none;
     }
     .service-card:hover {
@@ -504,11 +507,16 @@
   <div class="cursor" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
 
+  <!-- Fullscreen services background video + overlay -->
   <div class="video-background-wrapper" aria-hidden="true">
-    <!-- Replace src with ./assets/videos/services-bg.mp4 when you add the file -->
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="./assets/videos/services-bg.mp4" type="video/mp4" />
-    </video>
+    <video
+      src="./assets/videos/services-bg.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    ></video>
   </div>
   <div class="video-overlay" aria-hidden="true"></div>
 
